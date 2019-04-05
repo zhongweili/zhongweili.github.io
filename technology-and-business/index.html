@@ -1,0 +1,579 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="周三的时候只身前往北京，在邮电大学参加了阿里巴巴举办的ATF（阿里巴巴技术论坛），得益于津京城际的便捷，中午出发晚上归来，好不充实。 阿里巴巴技术论坛已经是第六届，这次是CTO王坚和CHO彭蕾进行演讲和分享，马云并未出席，但规格并不算低，感受比较深的是阿里强大的公司文化输出（从其赠送给每个人的阿里味儿套书可见一斑），这也是阿里喜欢做的事情。在我的印象中，BAT三家里面，百度重技术，腾讯精产品，阿里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="技术与商业，列车与铁轨">
+<meta property="og:url" content="http://yoursite.com/technology-and-business/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="周三的时候只身前往北京，在邮电大学参加了阿里巴巴举办的ATF（阿里巴巴技术论坛），得益于津京城际的便捷，中午出发晚上归来，好不充实。 阿里巴巴技术论坛已经是第六届，这次是CTO王坚和CHO彭蕾进行演讲和分享，马云并未出席，但规格并不算低，感受比较深的是阿里强大的公司文化输出（从其赠送给每个人的阿里味儿套书可见一斑），这也是阿里喜欢做的事情。在我的印象中，BAT三家里面，百度重技术，腾讯精产品，阿里">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-05T13:06:43.203Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="技术与商业，列车与铁轨">
+<meta name="twitter:description" content="周三的时候只身前往北京，在邮电大学参加了阿里巴巴举办的ATF（阿里巴巴技术论坛），得益于津京城际的便捷，中午出发晚上归来，好不充实。 阿里巴巴技术论坛已经是第六届，这次是CTO王坚和CHO彭蕾进行演讲和分享，马云并未出席，但规格并不算低，感受比较深的是阿里强大的公司文化输出（从其赠送给每个人的阿里味儿套书可见一斑），这也是阿里喜欢做的事情。在我的印象中，BAT三家里面，百度重技术，腾讯精产品，阿里">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 技术与商业，列车与铁轨 | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                技术与商业，列车与铁轨
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-04-25T23:17:18+08:00" content="2015-04-25">
+              2015-04-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>周三的时候只身前往北京，在邮电大学参加了阿里巴巴举办的ATF（阿里巴巴技术论坛），得益于津京城际的便捷，中午出发晚上归来，好不充实。</p>
+<p>阿里巴巴技术论坛已经是第六届，这次是CTO王坚和CHO彭蕾进行演讲和分享，马云并未出席，但规格并不算低，感受比较深的是阿里强大的公司文化输出（从其赠送给每个人的阿里味儿套书可见一斑），这也是阿里喜欢做的事情。在我的印象中，BAT三家里面，百度重技术，腾讯精产品，阿里强运营，而只有阿里的头儿不懂技术（不过马云自称『敬畏』技术），所以我对论坛前开放的技术展区很感兴趣，想看一看阿里巴巴商业蓝图背后的技术支撑是什么样子。这次技术展区共有15个展位，着重展示了阿里的13种重要技术，我参观了一圈感受最深的是，阿里巴巴果然擅长做平台，像阿里云、OceanBase、阿里百川这些都是平台级的东西，阿里能够利用其雄厚的实力做出一个个强大并逐步开放的平台，难能可贵。同时也感受到阿里还是有顶尖技术的，毕竟其背后是那么大的根基，飞天分布式系统、数据中心异地多活、阿里神盾局这些技术确实是很厉害的。而剩下的还有很多花哨的东西，比如智能交互机器人、拍立淘、地理围栏、人脸/笔迹/掌纹识别这些，其实都是数据挖掘方面的变相应用，并没有什么特别的，起码展示的产品并不够好，体现的是阿里的商业化能力。总体来看，阿里巴巴布局全面，技术也不差，据我了解阿里已有员工三万多人，自去年IPO以来气势如虹，还是很有前途的。</p>
+<p>说完了技术展区来谈谈晚上的论坛，我很幸运地拿到了前排正中间位置的票，得以近距离欣赏嘉宾的演讲以及开场热舞！不过说实在的，两位嘉宾的分享并不那么出彩，起码连PPT都没有准备，但是倒可以感受到嘉宾的人格魅力，尤其是CTO王坚博士，作为心理学博士转来的技术大牛，谈吐和举止表现得着实高情商，至少我可以听得出来，他在观众提问环节不经意间就可以回避掉难以回答的问题。</p>
+<p>这次论坛的主题是，技术拓展商业边界。王坚讲到这个主题时，他强调技术和商业相辅相成的关系，他说不知道如何形容这种关系，但他想不到一个更好的比喻了，技术和商业，就像是列车和铁轨，你不知道是铁轨指引列车方向，还是列车带领铁轨前行，但两者一定是齐头并进的。技术和商业的话题并不新鲜，这个比喻算挺精妙的，不过谁看到了都能一下想明白这层关系，但是，琢磨起来还是有味道的。</p>
+<p>回顾现代公司的发展历程，技术的进步不仅推动了商业的发展，甚至颠覆行业，衍生新的商业模式，以至于改变人的生活方式。很多时候，真正可怕的不是突然遇到新事物，而是回味遇到的那个时刻，5年前的人一定很难理解双十一这一天人们的奇怪行为，3年前的人还看不懂小米这种模式竟然如此成功，1年前的人完全不懂看春晚的时候为什么不停地摇手机。反过来看，商业对技术的影响看起来没那么明显，然而却是深刻的，比如英特尔的摩尔定律，可不简单是工艺的改进那么容易，微软的商业需求也起到了相当大的作用。再比如人们常常谈到的大数据，很大程度上是由于商业上的需要促进了数据处理技术的改进，因为研究人员很难接触实际的问题，更难以使用真实的海量数据。</p>
+<p>那么技术与商业要怎样并驾齐驱地发展呢？在罗辑思维中讲到一个词叫做『吓尿指数』，说的是两三百年前的人看到今天科技的景象会惊讶地吓尿，可是要想吓到他的前人可能需要回到上万年前刚会语言的人那里才行，而他的前人也要吓尿更前的人则要回到几十万年前刚会用火的原始人那里，也就是说，社会发展的速度是指数级增长的，也许再下一个层级的发展只要几十年甚至几年就会到来呢，想想也够惊讶的。因此，列车和铁轨会越跑越快，关键的问题应该是朝哪个方向前行。王坚一直在强调的一点是，阿里巴巴本质是一家数据公司，这也是他认为的未来的方向，云计算和数据挖掘。这只是站在阿里的角度的看法，当然了，这个方向现在看来还是蛮正确的，不过我希望其他的尝试也多一些，奇幻的虚拟现实，神秘的生物工程，危险的人工智能，我相信时间总会帮我们选择的。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/write/" rel="next" title="书写之于我">
+                <i class="fa fa-chevron-left"></i> 书写之于我
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/why-reading/" rel="prev" title="为什么读书">
+                为什么读书 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+

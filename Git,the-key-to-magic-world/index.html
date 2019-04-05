@@ -1,0 +1,588 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="世界迟早由比特构成，程序员就是这个世界的建筑师。所以，当我看到人们担忧机器人作乱，却从来不担心程序员造反的时候，我都觉得人类奇妙极了。如果真有机器人统治世界的一天到来，在那一天之前，程序员应该早已经统治了世界许久。 ---比特仁波切和菜头《程序员、魔法师和麻瓜》 作为一名涉世未深的初级程序员，看到如此的论调是心潮澎湃的。这样的魔法世界在旁人读来是心向往之，而我竟然是有机会驰骋其中的！ 的确，互联网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git，打开通向魔法世界大门的钥匙">
+<meta property="og:url" content="http://yoursite.com/Git,the-key-to-magic-world/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="世界迟早由比特构成，程序员就是这个世界的建筑师。所以，当我看到人们担忧机器人作乱，却从来不担心程序员造反的时候，我都觉得人类奇妙极了。如果真有机器人统治世界的一天到来，在那一天之前，程序员应该早已经统治了世界许久。 ---比特仁波切和菜头《程序员、魔法师和麻瓜》 作为一名涉世未深的初级程序员，看到如此的论调是心潮澎湃的。这样的魔法世界在旁人读来是心向往之，而我竟然是有机会驰骋其中的！ 的确，互联网">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-05T13:06:43.182Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git，打开通向魔法世界大门的钥匙">
+<meta name="twitter:description" content="世界迟早由比特构成，程序员就是这个世界的建筑师。所以，当我看到人们担忧机器人作乱，却从来不担心程序员造反的时候，我都觉得人类奇妙极了。如果真有机器人统治世界的一天到来，在那一天之前，程序员应该早已经统治了世界许久。 ---比特仁波切和菜头《程序员、魔法师和麻瓜》 作为一名涉世未深的初级程序员，看到如此的论调是心潮澎湃的。这样的魔法世界在旁人读来是心向往之，而我竟然是有机会驰骋其中的！ 的确，互联网">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Git，打开通向魔法世界大门的钥匙 | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Git，打开通向魔法世界大门的钥匙
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-07T23:19:54+08:00" content="2017-05-07">
+              2017-05-07
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>世界迟早由比特构成，程序员就是这个世界的建筑师。所以，当我看到人们担忧机器人作乱，却从来不担心程序员造反的时候，我都觉得人类奇妙极了。如果真有机器人统治世界的一天到来，在那一天之前，程序员应该早已经统治了世界许久。
+---比特仁波切和菜头《程序员、魔法师和麻瓜》</code></p>
+<p>作为一名涉世未深的初级程序员，看到如此的论调是心潮澎湃的。这样的魔法世界在旁人读来是心向往之，而我竟然是有机会驰骋其中的！</p>
+<p>的确，互联网的大潮汹涌澎湃，几乎所有人都已经离不开计算机、手机，不懂程序似乎就抓不住未来了，于是总听到有许多人说在自学编程，想要拿到那张船票。</p>
+<p>程序确实是魔法世界的基石，但是会编程序可不意味着会施魔法。因为很显然，编程序并没有施魔法那么酷炫，做的最多的事情不是挥舞魔法棒，而是辛辛苦苦实现需求和绞尽脑汁修改bug。一方面，市场上的空缺引来了大批生造的程序员搬砖工，做着重复性的CRUD的机械式工作，就以为掌握了程序的奥义。另一方面，科班出身的大学生学习着最基本的计算机知识，迷失在页面排序算法的堆栈里进进出出。似乎都与印象中黑客级别的魔法师不怎么像。</p>
+<p>遥想当年，阴差阳错进了软件这个专业，听着各种大师的故事，本以为等待我的会是星辰大海，谁成想竟是把眼看花的符号、搞不清方向的指针、没完没了的程序错误……正当我兴趣消磨之际，我看到一本教父级的Paul Graham写的《黑客与画家》，然而…并没有看懂。于是我扔掉书本又钻进了二叉树的随机森林里。</p>
+<p>也许很多时候就是这样，彼岸的灯火闪着斑斓的光，可是去往彼岸的途中总是漫长的求索。这时候多么希望搭上一艘快船，让这求索之路变得欢快而轻便。</p>
+<p>在外人看来程序的魔法世界璀璨夺目，想要进去只得翻山越岭，要是有任意门不就好了？其实互联网如此的开放，暗门处处都有，关键是要有一把对的上的钥匙。于我而言，Git就是我敲开程序大门的这把钥匙。</p>
+<p>Git是什么？简而言之就是一个分布式版本控制软件。程序世界有数不尽的优美理论、简洁协议、优秀产品，为什么会是Git？因为它够奇妙。奇妙的东西一定有颠覆的地方，我第一次接触到Git的时候就被颠覆了，作为一个版本控制工具，Git做到了极致，只需敲几个命令，就可以坐上时光机穿梭在文件夹的各个版本间，见证历史片刻的每一个角落。那个时刻就是我的一个顿悟瞬间，原来硬盘里的空间不是一个被塞得越来越满的盒子，而是没有尽头可以任意变换的数字0101010101，原来不需要复杂的操作只要几行字就能发生神奇的事情，原来计算机可以听我发号施令精确无比地为我完成任务，那感觉就像是掌握了点石成金的魔法棒。</p>
+<p>除了简洁有力，Git的另一个奇妙之处在于其分布式的特点。何为分布式？可以理解成一群分布在不同位置的计算机结成同盟协调运行的系统。具体到版本控制，那便是一群计算机一起合作维护文件的版本。我就是在那时理解了分布式，也才理解了互联网何以兼容并包而生机勃勃。从拥有聪明大脑和灵活双手的智人无法窥见现代社会的复杂和瑰丽，因为现代文明是属于整个人类群体的智慧。同样的，那时我明白了，程序世界是靠着开放与合作才变得愈发精彩，而促成程序员联合起来的一大工具就是Git。</p>
+<p>为什么程序员打招呼的场所是在GitHub？为什么电影里的黑客总是在噼里啪啦敲击键盘？为什么疯狂的程序员会对GitHub连击数执迷不悟？只有进到魔法世界里身临其境才能解开这些为什么。当我掌握了Git，打开这扇暗门后，真的是进入了另一个世界。</p>
+<p>我发现命令行是家常便饭，学会了Git，我可以在命令行里探索Gradle、Maven、Homebrew、npm、composer……简直可以把鼠标仍了。我发现GitHub有太多意想不到的好东西，这里可以找到有趣的应用、爬虫工具、课堂笔记、微信公众号编辑器、游戏脚本、甚至编程作业答案…的源码，原来程序员有了idea就该实现也能够实现。我发现好的程序可以互相借鉴，遇到问题可以共同解决，程序世界扎扎实实，人人都该创造也都在创造。</p>
+<p>找到一把钥匙，就可以打开一扇门，可以进到一个房间，再找到下一把钥匙，打开下一扇门。这样由程序写成的发现之旅就正是发现程序世界的法门。我的学习之路就是由一条条连在一起的线交错而成。这样处处连接的线条，上面不是做不完的一个个任务和终点，而是一个接一个的节点，延展开来，伸向远处，没有尽头。所以我得以在魔法世界里进行我的探索和发现。</p>
+<p>想要学习编程，不妨从Git开始。想要学习任何东西，不妨先找到一把钥匙。</p>
+<p>另：再次拜读《黑客与画家》，果然好书！</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/one-to-one/" rel="next" title="一对一">
+                <i class="fa fa-chevron-left"></i> 一对一
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/listen/" rel="prev" title="且听风吟">
+                且听风吟 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+

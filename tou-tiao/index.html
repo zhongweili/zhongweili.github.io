@@ -1,0 +1,585 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="刚看了财经小晚对张一鸣的采访报道，非常有意思！回答之间像是两大武林高手在过招，又像是两个人的哲学对谈。这其中涉及到商业、价值观、利益、个人性格、理想……以及所有这些交叉关联出的东西。 看完这则采访，我对张一鸣这个老学长有了新的认识，其实也不算很新，是早有预料了，一个克制保守的综合类大学程序员出身的CEO，就应该有这样的视野和处事风格，以及个人的坚守。 不过坦诚地说，我还是不会去使用今日头条APP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据驱动的今日头条">
+<meta property="og:url" content="http://yoursite.com/tou-tiao/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="刚看了财经小晚对张一鸣的采访报道，非常有意思！回答之间像是两大武林高手在过招，又像是两个人的哲学对谈。这其中涉及到商业、价值观、利益、个人性格、理想……以及所有这些交叉关联出的东西。 看完这则采访，我对张一鸣这个老学长有了新的认识，其实也不算很新，是早有预料了，一个克制保守的综合类大学程序员出身的CEO，就应该有这样的视野和处事风格，以及个人的坚守。 不过坦诚地说，我还是不会去使用今日头条APP">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://i1.piimg.com/567571/3694c1ea71d518ed.jpg">
+<meta property="og:updated_time" content="2019-04-05T13:06:43.204Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据驱动的今日头条">
+<meta name="twitter:description" content="刚看了财经小晚对张一鸣的采访报道，非常有意思！回答之间像是两大武林高手在过招，又像是两个人的哲学对谈。这其中涉及到商业、价值观、利益、个人性格、理想……以及所有这些交叉关联出的东西。 看完这则采访，我对张一鸣这个老学长有了新的认识，其实也不算很新，是早有预料了，一个克制保守的综合类大学程序员出身的CEO，就应该有这样的视野和处事风格，以及个人的坚守。 不过坦诚地说，我还是不会去使用今日头条APP">
+<meta name="twitter:image" content="http://i1.piimg.com/567571/3694c1ea71d518ed.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 数据驱动的今日头条 | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                数据驱动的今日头条
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-15T23:15:03+08:00" content="2016-12-15">
+              2016-12-15
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://i1.piimg.com/567571/3694c1ea71d518ed.jpg" alt></p>
+<p>刚看了财经小晚对张一鸣的采访报道，非常有意思！回答之间像是两大武林高手在过招，又像是两个人的哲学对谈。这其中涉及到商业、价值观、利益、个人性格、理想……以及所有这些交叉关联出的东西。</p>
+<p>看完这则采访，我对张一鸣这个老学长有了新的认识，其实也不算很新，是早有预料了，一个克制保守的综合类大学程序员出身的CEO，就应该有这样的视野和处事风格，以及个人的坚守。</p>
+<p>不过坦诚地说，我还是不会去使用今日头条APP，至少现阶段不会，因为我无法忍受这样的产品消耗我宝贵的时间和注意力。但是这并不妨碍，今日头条是非常成功的产品。这看起来矛盾，但不是的，成功的产品不用去满足每一个人，反过来，如果能够满足每一个人它很难成功。我越来越认识到，现实世界复杂而冷酷无情。推动一个企业发展的，除了来自内部的能动性，还有来自外部的各种力量，价值观的拷问、舆论的导向、市场的考验……企业发展的速度和方向太难以把控。一个公司，能够给相当大一部分用户持续提供有效的服务，这本身就是成功了。</p>
+<p>显然，当这个公司的体量大到一定程度，当这种服务达到一定规模时，会受到来自各方的责难。类似于百度，今日头条也在承受这些困扰。这家110亿美元的公司，每个月为1.5亿用户提供服务，每天有近7000多万人花76分钟在这个APP上观看新闻、视频。在移动互联网时代新闻类应用井喷式爆发，今日头条之所以能脱颖而出，很多人说是因为其很好的利用了机器学习这样的技术，更多的人说是因为其内容的低俗。今日头条利用机器学习把自己打造成一个信息分发平台，机器学习的原理就是数据驱动，用户喜欢看什么，就看用户分发什么信息，不难想象，越发严重的标题党和擦边球便充斥其中，用户也浸淫其中。</p>
+<p>“低俗是今日头条成功的原因之一吗？”</p>
+<p>张一鸣说”我觉得这是有偏颇的……”，其实是不得不承认了。为什么会这样？大众就喜欢低俗的内容吗？很多人会说，人性使然。可是，人性本善还是本恶？以及，低俗就不好，低俗就能体现恶吗？以及，不带人性的算法是否更好？更进一步，没有人性的人工智能是否比人类更好？</p>
+<p>“你认为头条的算法应该是引导人性还是迎合人性？”</p>
+<p>“我不觉得算法要和人性挂钩……我们做技术的时候也一样——我们没有说要模拟人性，也没有说要引导人性。你们文化人给了我们太多深刻的命题。”是啊，很多问题就是太深刻了，以至于无法找到答案，即使找到答案也无法验证对错。</p>
+<p>在科学研究发展史中有四个范式，分别是实验科学、理论科学、计算科学和数据密集型科学，如今我们正处在一个数据驱动的智能时代，很多研究结论的产生已经不再是通过实验、公式推导或大型计算得来了，而是一切由数据说话，那么数据导出的什么结果才对人类有益？更实际点，研究人员和技术人员怎样更好地利用数据？这是值得深思的问题。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/experience/" rel="next" title="贵在体验">
+                <i class="fa fa-chevron-left"></i> 贵在体验
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-books-and-movies/" rel="prev" title="2016陪伴我的书籍与影片">
+                2016陪伴我的书籍与影片 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+

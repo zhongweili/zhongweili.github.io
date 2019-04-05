@@ -1,0 +1,585 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="柯洁对阵 AlphaGo 的三番棋落幕了，人们纷纷唏嘘慨叹，为了这个少年天才的落泪，为了人类惨遭 AI 碾压的事实。然而其实在赛前这场对局就没有胜负悬念，AlphaGo 年初时就以“Master”的名字在网上围棋赛中 60 连胜横扫一众职业棋手，人们只是抱着一点点幻想看这个少年能否创造奇迹。 为何是少年？如今排名世界第一的柯洁只有十九岁，李世乭十多年前升为围棋九段时也只二十岁，李昌镐夺得第一个世界">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聊聊下棋与 AI">
+<meta property="og:url" content="http://yoursite.com/chess-and-AI/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="柯洁对阵 AlphaGo 的三番棋落幕了，人们纷纷唏嘘慨叹，为了这个少年天才的落泪，为了人类惨遭 AI 碾压的事实。然而其实在赛前这场对局就没有胜负悬念，AlphaGo 年初时就以“Master”的名字在网上围棋赛中 60 连胜横扫一众职业棋手，人们只是抱着一点点幻想看这个少年能否创造奇迹。 为何是少年？如今排名世界第一的柯洁只有十九岁，李世乭十多年前升为围棋九段时也只二十岁，李昌镐夺得第一个世界">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-05T13:06:43.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="聊聊下棋与 AI">
+<meta name="twitter:description" content="柯洁对阵 AlphaGo 的三番棋落幕了，人们纷纷唏嘘慨叹，为了这个少年天才的落泪，为了人类惨遭 AI 碾压的事实。然而其实在赛前这场对局就没有胜负悬念，AlphaGo 年初时就以“Master”的名字在网上围棋赛中 60 连胜横扫一众职业棋手，人们只是抱着一点点幻想看这个少年能否创造奇迹。 为何是少年？如今排名世界第一的柯洁只有十九岁，李世乭十多年前升为围棋九段时也只二十岁，李昌镐夺得第一个世界">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 聊聊下棋与 AI | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                聊聊下棋与 AI
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-31T23:07:51+08:00" content="2017-05-31">
+              2017-05-31
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>柯洁对阵 AlphaGo 的三番棋落幕了，人们纷纷唏嘘慨叹，为了这个少年天才的落泪，为了人类惨遭 AI 碾压的事实。然而其实在赛前这场对局就没有胜负悬念，AlphaGo 年初时就以“Master”的名字在网上围棋赛中 60 连胜横扫一众职业棋手，人们只是抱着一点点幻想看这个少年能否创造奇迹。</p>
+<p>为何是少年？如今排名世界第一的柯洁只有十九岁，李世乭十多年前升为围棋九段时也只二十岁，李昌镐夺得第一个世界冠军时才十六岁。古老的围棋，总是因着代代无穷尽的少年们焕发着旺盛的活力。</p>
+<p>看到他们，每个人都容易想到自己少年时痴迷的样子。我在少年时代很喜欢下棋，虽然棋艺比较差，不过沉迷其中，倒也自得其乐，而且跳棋、军棋、象棋、围棋皆有涉略，在里面花的时间是蛮多的。其中我最喜爱的是中国象棋，小时候看大人下棋，看了几盘就学会了，然后跟大人们下棋下着下着发现没有了对手，得意之余竟有些悲伤。后来搬了家，丢了棋盘，我就自己在白纸上仔仔细细地计算方格画出一张来，还不忘在中间河界写上『棋逢对手 将遇良材』八个大字，之后认识了邻居一个厉害的老头儿，当真是遇上了对手，那时我便天天跑到他家里下棋。可即使沉迷下棋这么久，当我后来遇到更多对手时，我知道与高手之间还隔着无法逾越的鸿沟。</p>
+<p>所以我愈发明白，AlphaGo 的厉害之处不在于数据和训练，它可以每天和自己对战上万盘，但是仍然有着巨大的瓶颈，若没有更高明的对手，努力再多次也只是提高一点点而已，除非提升算法。人们争论人工智能是数据重要还是算法重要，两者当然都无可或缺，只是在应用上数据的积累更有优势，而算法的更新对于大的突破则更为关键。</p>
+<p>下棋不像体育运动，输的不是体力不足、技巧不够，而是穷尽自己能想到的所有可能性，也找不到赢面，原来一步步走下来局势早已定了。面对棋艺高手时，当我实在找不到对方的疏漏，我才发现以前很多赢法很可能只是由于对手的失误，那时我突然了悟，对弈拼的不是谁脑子更快、谁能往后多看几步，而是谁对局势的把握判断更厉害，而这，我理解为 AI 的算法。</p>
+<p>马云认为人下棋的乐趣在于捡对手的勺子（错着），没有勺子下棋就没有乐趣。我只能把这当成是业余外行的随口一句闲话了。在我下棋的过程中，是慢慢可以感受到自己的成长的，刚开始时非常在意一子两子的争抢，尤其注意一个子的各种走法，败得多了开始有意学习别人的谋篇布局，模仿变换了几种风格渐渐学会模糊地把握局面，再后来看局面能有自己的一套判断方法，虽然局面上差不多，但清楚地知道这时是守势，那时是攻势，看到的已经不是棋子，而是隐藏在棋子背后千变万化的势力对比。在这样的对弈中，两股势力在碰撞和激荡中变幻不定，这才是乐趣所在。</p>
+<p>AlphaGo 为什么那么厉害呢？我认为关键在于 AI 毫无乐趣，因而对单一目标有着绝对顽固的追求。柯洁和 AlphaGo 的第一局比赛以 1/4 子的差距落败，有人以为这是惜败，只差一点点，有人以为这是惨败，对方不仅能胜，还能控制尽量以最小优势获胜。其实都不是，在中盘时 AlphaGo 已经稳操胜券了，但是它要更稳！计算机追求的不是胜差，而是胜率。已经领先的情况下，AlphaGo 走棋越发保守，有时宁肯在自己的地盘填空也不去争夺，这种不冒一点风险的下法，让柯洁得以在后段奋起直追，然而却完全无法反败为胜，最好的结果也就是以最小差距落败了。于是 AlphaGo 得一外号“稳如狗”。</p>
+<p>除了对胜率的极致追求，AlphaGo 的算法在判断局势时还有一个优势：只看当下。用学术话语来说，AI 的决策具有马尔科夫链性质，这种“无记忆”的性质使得 AlphaGo 在下每一步棋时完全不考虑之前的所有走法，只关心这一步下在哪里整盘的胜率最大，因而更有可能下出一些奇诡的棋路，更值得学习。人则不一样，人在下棋时有一个大忌讳就是患得患失，纠结于前面的先发优势或者沉没成本，往往容易陷在其中，因此才有那句话“旁观者清”。而 AI 却永远是个旁观者，简直是自带上帝视角了。</p>
+<p>于是 AlphaGo 封神，人类似乎再难超越，在围棋这个人类引以为豪几千年的疆域，此时黯然神伤。在柯洁和 AlphaGo 的这场对局开战之前我就想问：柯洁是不是明知不可为而为之？我想是的，但也许这种不认输的傻气，正是人类真正可贵的骄傲吧。</p>
+<p>不过现实点说，人机围棋大战也很有好处。从去年李世乭对战 AlphaGo 一代，到今年柯洁对战 AlphaGo 二代，激发了越来越多人对围棋的兴趣，要想发展，起码得更多关注和投入吧，这对于围棋的发展是好事。还有，人们研究 AlphaGo 的棋路，发现了前所未闻的新颖走法，这一定会对古老的围棋带来革新，是不是老祖宗几千年传下来的一些理论不一定对？是不是以前的思路和视野太狭窄了？</p>
+<p>柯洁赛后曾说，AlphaGo 看到的是宇宙，而我看到的就是一个小池塘，看宇宙还是它去做好了，我就在小池塘钓鱼吧。这样的话语未免过于自谦，但是不得不承认，人类和 AI 在围棋上已经有了一道穿不过的屏障，而且这种差距还将越来越大。以前人们可以接受赛跑不过汽车，就把汽车当成是延伸人类的工具，可是现在输在了智力上，人类真的甘愿待在小池塘里吗？</p>
+<p>很快，人工智能将在下一个领域继续碾压人类。未来 AI 是否会超越人类？且听下回分解。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/new-land/" rel="next" title="发现一块新大陆">
+                <i class="fa fa-chevron-left"></i> 发现一块新大陆
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/HTTP-in-Development/" rel="prev" title="HTTP in Development">
+                HTTP in Development <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+

@@ -1,0 +1,581 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="昨天4月23号是世界读书日，网上很多地方都在谈读书，我本来也想写篇文章聊聊我的阅读，不过我读书既不多也不好，想想还是做点别的事吧，比如，开发个微信小程序。 如果你时常关注互联网，多少也听说过微信小程序了。从去年刚传出点风声起，各个科技媒体就开始热烈议论，不少程序员朋友也着手准备学习。到了今年1月9日微信小程序正式发布后，由于微信的克制，对小程序的应用限制极为严格，使得脱离大家的预期，媒体们反而开始">
+<meta property="og:type" content="article">
+<meta property="og:title" content="体验微信小程序">
+<meta property="og:url" content="http://yoursite.com/wechat-little-program/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="昨天4月23号是世界读书日，网上很多地方都在谈读书，我本来也想写篇文章聊聊我的阅读，不过我读书既不多也不好，想想还是做点别的事吧，比如，开发个微信小程序。 如果你时常关注互联网，多少也听说过微信小程序了。从去年刚传出点风声起，各个科技媒体就开始热烈议论，不少程序员朋友也着手准备学习。到了今年1月9日微信小程序正式发布后，由于微信的克制，对小程序的应用限制极为严格，使得脱离大家的预期，媒体们反而开始">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-05T13:06:43.205Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="体验微信小程序">
+<meta name="twitter:description" content="昨天4月23号是世界读书日，网上很多地方都在谈读书，我本来也想写篇文章聊聊我的阅读，不过我读书既不多也不好，想想还是做点别的事吧，比如，开发个微信小程序。 如果你时常关注互联网，多少也听说过微信小程序了。从去年刚传出点风声起，各个科技媒体就开始热烈议论，不少程序员朋友也着手准备学习。到了今年1月9日微信小程序正式发布后，由于微信的克制，对小程序的应用限制极为严格，使得脱离大家的预期，媒体们反而开始">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 体验微信小程序 | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                体验微信小程序
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-07T23:29:16+08:00" content="2017-05-07">
+              2017-05-07
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>昨天4月23号是世界读书日，网上很多地方都在谈读书，我本来也想写篇文章聊聊我的阅读，不过我读书既不多也不好，想想还是做点别的事吧，比如，开发个微信小程序。</p>
+<p>如果你时常关注互联网，多少也听说过微信小程序了。从去年刚传出点风声起，各个科技媒体就开始热烈议论，不少程序员朋友也着手准备学习。到了今年1月9日微信小程序正式发布后，由于微信的克制，对小程序的应用限制极为严格，使得脱离大家的预期，媒体们反而开始唱衰小程序。而最近一周，微信像被打了鸡血一样（想必苹果脱不了干系）接连发布新通知，将小程序变得越来越开发。到目前为止，微信小程序已经可以通过扫描二维码进入；小程序有了不同于以往大黑方格的个性化二维码；小程序已经可以关联公众号菜单；小程序已经可以在公众号文章内直接打开。</p>
+<p>微信小程序能做什么呢？刚刚发布时微信官方一直在引导大家往线下场景看，比如在一个公交站点贴一个二维码，微信扫描直接进入一个小程序会看到下一班公交还有几分钟到站，比如路上看见一辆摩拜单车，扫描车身二维码打开小程序获得开锁码。而现在线上场景可以玩了，自然有了很多玩法，比如想在群体发一个通知，可以直接用小程序实现了，比如想发起个投票，拉个小程序也很方便，再比如苹果用户不能赞赏文章了，放个小程序立马搞定。可以想见，过不了多久，微信小程序就会铺天盖地而来。</p>
+<p>于是这次，在体验了不少小程序后，我终于想体验一下开发小程序了。本来我一直是持观望态度的，担心自己前端知识不足，又想到小程序尚不成熟，文档资料太少，所以不敢实施，可是观望着潮不就退了吗？抱着体验的心态，我趁着周末学习了小程序基础开发，我发现网上资料其实已经有很多了，看来热度是很高。如果不需要太复杂的功能，开发起来也挺容易，于是我很快完成了一个简单的版本提交上去进行审核。</p>
+<p>一个小时前，刚刚收到了审核不通过的消息，看了详情，这类功能目前必须企业级开发者才能通过，似乎小程序对个人开发者还是没有很开放。我倒也不遗憾，毕竟做得很简单，重在体验和实践。就像读书一样，有些人冠冕堂皇地晒出一列书单，可是如果不真正去读书又有什么用呢？</p>
+<p>说到书单，这其实反映的是人们的一种功利心，想要找到最有用的那些书，想要读了那个书单上的书就马上能够提高。然而读书是很私人的事情，每个人经历不同喜好不同，都有属于自己的书单。我做的这个小程序就是满足我筛选书的需求，书籍的海洋太广阔，我拿到一个书名一定先要查一查书的简介，好有一个大致的判断。我最常去查询的地方是豆瓣，但是这样每次要打开浏览器、进到百度、再找到豆瓣，太繁琐，放到手机微信里是不是会方便呢？</p>
+<p>由于未审核通过，也就不能发布，只能作为体验版使用。如果你想试用，可以告知我你的微信号，再扫描下方二维码，即可打开。</p>
+<p>欢迎体验。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/listen/" rel="next" title="且听风吟">
+                <i class="fa fa-chevron-left"></i> 且听风吟
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/new-land/" rel="prev" title="发现一块新大陆">
+                发现一块新大陆 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+

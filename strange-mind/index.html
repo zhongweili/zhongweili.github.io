@@ -1,0 +1,591 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="学久了数学，不仅思考问题更加有逻辑性和严谨性，还会学到一种高度抽象的总结性思维方式。有时候觉得，数学分析、抽象代数、信息论等这些抽象的理论简直就是从上帝视角得来的，那些精秒的定义和定理让你感觉像是完全置身其外的造物主。 偶尔我也会脑洞大开，试着想要洞察出些许微光。 认知在Wiki上，认知的解释是，个体思维进行信息处理的心理功能。我们无时无刻不在进行着认知活动，不管是眼前掠过的，耳边听闻的，还是脑海">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异想">
+<meta property="og:url" content="http://yoursite.com/strange-mind/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="学久了数学，不仅思考问题更加有逻辑性和严谨性，还会学到一种高度抽象的总结性思维方式。有时候觉得，数学分析、抽象代数、信息论等这些抽象的理论简直就是从上帝视角得来的，那些精秒的定义和定理让你感觉像是完全置身其外的造物主。 偶尔我也会脑洞大开，试着想要洞察出些许微光。 认知在Wiki上，认知的解释是，个体思维进行信息处理的心理功能。我们无时无刻不在进行着认知活动，不管是眼前掠过的，耳边听闻的，还是脑海">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-05T13:06:43.202Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="异想">
+<meta name="twitter:description" content="学久了数学，不仅思考问题更加有逻辑性和严谨性，还会学到一种高度抽象的总结性思维方式。有时候觉得，数学分析、抽象代数、信息论等这些抽象的理论简直就是从上帝视角得来的，那些精秒的定义和定理让你感觉像是完全置身其外的造物主。 偶尔我也会脑洞大开，试着想要洞察出些许微光。 认知在Wiki上，认知的解释是，个体思维进行信息处理的心理功能。我们无时无刻不在进行着认知活动，不管是眼前掠过的，耳边听闻的，还是脑海">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 异想 | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                异想
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-03-29T21:27:59+08:00" content="2015-03-29">
+              2015-03-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>学久了数学，不仅思考问题更加有逻辑性和严谨性，还会学到一种高度抽象的总结性思维方式。有时候觉得，数学分析、抽象代数、信息论等这些抽象的理论简直就是从上帝视角得来的，那些精秒的定义和定理让你感觉像是完全置身其外的造物主。</p>
+<p>偶尔我也会脑洞大开，试着想要洞察出些许微光。</p>
+<h3 id="认知"><a href="#认知" class="headerlink" title="认知"></a>认知</h3><p>在Wiki上，<a href="http://zh.wikipedia.org/wiki/認知" target="_blank" rel="noopener">认知</a>的解释是，个体思维进行信息处理的心理功能。我们无时无刻不在进行着认知活动，不管是眼前掠过的，耳边听闻的，还是脑海中飘过的，熟悉的会有个印象，陌生的会探个究竟。对于一个无生命的特定的实物（有生命有感情的太复杂），我们是怎样认知的呢？</p>
+<p>在信息技术中有一个玄乎的论调，万物皆对象。这大概是因为面向对象方法是软件开发的主流，因此这里的对象指的是类的实例化，对象的抽象是类，类的具体化是对象，比如水杯是个类，而眼前我用的这个水杯是个对象。万物皆对象，我想说，对象皆向量。这个向量有方向有大小，而且是个高维（有限维）向量，维度高到无法想象其存在形式。那类呢，很简单，类是对象的抽象，就是向量的方向。</p>
+<p>那么我们怎么去认知一个高维向量呢？将其<a href="http://zh.wikipedia.org/wiki/投影" target="_blank" rel="noopener">投影</a>到熟悉的低维空间。我们都知道，一个二维向量可以用坐标表示为(a,b)，那么(0,a)和(0,b)就是这个向量投影到x轴和y轴的结果，类似的，一个三维向量(a,b,c)可以投影到直线x轴上(a,0,0)，也可以投影到x-y平面上(a,b,0)（当然还可以投影到其他线或其他面上），可以看到投影过后得到的是向量局部的特征。好了，可以来举例子了，对一部手机这个对象，它当然包含了太多信息，一个人对它的认识一定是有限的，可能只是品牌、颜色、尺寸、相机像素、手机系统等方面，那就是投影到了品牌、颜色……这些元素作为单位向量构成的低维子空间，我想这大概就是一种认知过程。</p>
+<h3 id="评判"><a href="#评判" class="headerlink" title="评判"></a>评判</h3><p>为什么同样的一个对象，不同人对其认识并不相同呢？因为每个人都有自己的评判系统。</p>
+<ul>
+<li>首先，投影变换是将整个向量空间映射到它的其中一个子空间，每个人投影到的子空间并不相同，还是那部手机，甲是普通的消费者，只知道品牌、颜色、尺寸这些显而易见的信息，而乙是资深的手机评测者，熟悉CPU内核、相机算法、系统优化度、品控把握……他们两个对这部手机投影的结果当然不一样。</li>
+<li>其次，即使投影到了相同的子空间，投影的方式很可能不一样，像上面举的简单例子都是正交投影，<a href="http://zh.wikipedia.org/wiki/正交" target="_blank" rel="noopener">正交</a>的概念是由向量内积引出的，简单的可以类比到垂直（<a href="http://zh.wikipedia.org/wiki/数量积" target="_blank" rel="noopener">内积</a>为0），像太阳直射下来，显然大部分情况下阳光是斜射的且角度不同，故不同的投影方式也会导致结果不同，也就是不同人对同一维度信息的衡量不一样。</li>
+<li>进一步考虑，不同源于对比，而向量作为矢量是无法进行比较大小的，除非将其量化，其实人与人之间认识的差异实质上是对象在某一特定维度上的比较，虽然我们脑海中对象是完整的存在，可一旦描述它运用它的时候，我们使用的是对象在一个个坐标轴上的标量值。</li>
+</ul>
+<p>幸运的是，在人们的共识下，有一个标量可以代表对象这个向量，那就是『价值』。给一个对象作为输入，就得到一个具体的标量值作为输出，即价值，这样一个函数我们并不清楚它的表达式，或者我们这里可以说成是『映射』。实际上，映射是更宏观的一种表述，函数是映射，投影也是映射，不妨大胆地想象，上面的这个映射可以理解成『价值观』（不知不觉间我们把实体对象的概念推广了）。</p>
+<h3 id="决策"><a href="#决策" class="headerlink" title="决策"></a>决策</h3><p>人认知一个事物后，天性使人生出评判它的冲动，最终是为了进行决策。我们不妨认为，决策即选择，并且只要搞清楚两个选项的选择，多个选项的问题也就解决了。</p>
+<p>看起来似乎很容易，只要将选项带入上文的价值观映射，得出结果比较大小即可。然而事实并非如此简单，因为每个人都不是孤立的，人的决策当然也是会受影响的。</p>
+<p>虽然人人都认同用价值来评判事物，可是每个人得到的价值却不尽相同，要使价值可换算，须有一个一般的标准，这就是价值的表现形式『价格』。诚然，价格不是随意而定的，价格需要能够反映所有人的意愿，供需关系大概就是一种反映形式。具体是怎样我们不得而知，我们知道的是，从价值观到价格的这个映射（这实际上是函数的函数，就是<a href="http://zh.wikipedia.org/wiki/泛函" target="_blank" rel="noopener">泛函</a>）给出了一种标准。</p>
+<p>于是，人们依据标准进行对比决策。现实是，大部分的决策所需的计算量人脑是达不到的，人们往往同时靠理性和直觉来决策，而直觉常常是带有先验性的，所以对于决策有利也会有弊。</p>
+<hr>
+<p>其实这些异想的只言片语在我脑海中存在了很久，只是在这儿试图将它们拼凑起来，希望能有一定的结构。我明白这些论调漏洞百出，根本没有根基，但我觉得这是启示性的，展开来可以有一大堆例子，我并没有都写出来，每个人肯定能有不一样的解读，只要经过了思考。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/wechat-subscribes-i-like/" rel="next" title="我喜欢的微信订阅号">
+                <i class="fa fa-chevron-left"></i> 我喜欢的微信订阅号
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/attitude-in-life/" rel="prev" title="生活的态度">
+                生活的态度 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#认知"><span class="nav-number">1.</span> <span class="nav-text">认知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评判"><span class="nav-number">2.</span> <span class="nav-text">评判</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策"><span class="nav-number">3.</span> <span class="nav-text">决策</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+

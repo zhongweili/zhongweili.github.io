@@ -1,0 +1,596 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="这学期集中精力做一个网站开发的横向项目，自知没有专业团队的水准，很多地方也不符合业内规范标准的方法，不过在这个过程中不断摸索着，具体的开发方法、处理问题的思路、团队成员的合作、进度的把握等等各方面都有所接触，总是有些体会的。趁着项目暂停的机会，做一些反思总结。 我回忆起日常工作中每一次决策的思路、实施的过程、造成的后果，力图从中挖掘出最核心最有价值的内容——反常识。 反思的关键在于否定，否定了旧有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目开发中的反常识思考">
+<meta property="og:url" content="http://yoursite.com/thinking-in-projects/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="这学期集中精力做一个网站开发的横向项目，自知没有专业团队的水准，很多地方也不符合业内规范标准的方法，不过在这个过程中不断摸索着，具体的开发方法、处理问题的思路、团队成员的合作、进度的把握等等各方面都有所接触，总是有些体会的。趁着项目暂停的机会，做一些反思总结。 我回忆起日常工作中每一次决策的思路、实施的过程、造成的后果，力图从中挖掘出最核心最有价值的内容——反常识。 反思的关键在于否定，否定了旧有">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-05T13:06:43.203Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目开发中的反常识思考">
+<meta name="twitter:description" content="这学期集中精力做一个网站开发的横向项目，自知没有专业团队的水准，很多地方也不符合业内规范标准的方法，不过在这个过程中不断摸索着，具体的开发方法、处理问题的思路、团队成员的合作、进度的把握等等各方面都有所接触，总是有些体会的。趁着项目暂停的机会，做一些反思总结。 我回忆起日常工作中每一次决策的思路、实施的过程、造成的后果，力图从中挖掘出最核心最有价值的内容——反常识。 反思的关键在于否定，否定了旧有">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 项目开发中的反常识思考 | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                项目开发中的反常识思考
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-10-26T21:29:32+08:00" content="2017-10-26">
+              2017-10-26
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这学期集中精力做一个网站开发的横向项目，自知没有专业团队的水准，很多地方也不符合业内规范标准的方法，不过在这个过程中不断摸索着，具体的开发方法、处理问题的思路、团队成员的合作、进度的把握等等各方面都有所接触，总是有些体会的。趁着项目暂停的机会，做一些反思总结。</p>
+<p>我回忆起日常工作中每一次决策的思路、实施的过程、造成的后果，力图从中挖掘出最核心最有价值的内容——<em>反常识。</em> <strong>反思的关键在于否定，否定了旧有的认知，才能在自己的脑海中建立起新的结构。</strong> 每发现一处反常识，我都在这种颠覆中印象深刻。</p>
+<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><blockquote>
+<p>常识：开发中学习新东西时，先掌握了所有知识，再进行开发</p>
+<p>反常识：开发中学习新东西时，先动手去做，再回来学习知识</p>
+</blockquote>
+<p>新手入门开发时，常常会有一个误区，先把所有的理论、方法、特点都弄懂，才开始动手做。比如要学习前端，听说是用 HTML，于是百度一下：HTML 是一种超文本标记语言……每一个字都认识，但是不知道在说什么，要想弄明白需要耗费巨额的时间。这就<em>好比学游泳，不需要知道水有什么原理，只需要知道能用它做什么。</em>因此，最好的入门方法，就是<strong>完全彻底地模仿最好的。</strong></p>
+<p>不要试图掌握所有知识，另一个重要的原因是，新的知识和方法在不断涌现，尤其在互联网发展迅猛的今天，每隔几个月就出现个新的框架，之前在旧有体系中的深挖意义不大。</p>
+<p>从这一点来看，只是模仿别人动手去做是不够的，还需要回来继续学习知识。<em>一位船长说他之所以能够通过险滩并不是因为知道所有暗礁的位置，而是知道一条安全的路线罢了。</em>但是在软件开发中没有永远正确的路线，模仿别人的方法可能不是最安全的或者最有效率的，动手做好后要继续学习，找到适应场景的最合适路线。</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><blockquote>
+<p>常识：项目规划时，先定需求，再排工期</p>
+<p>反常识：项目规划时，先定工期，再调整需求</p>
+</blockquote>
+<p>项目规划，是为了保证项目开发能够按部就班地高效推进，但是真正做过了项目才发现，<strong>开发根本不可能按部就班，因为项目总是在变化中。</strong>为了追求效率，在进行计划安排时，要先定好工期，再基于工期去优化产品的设计和开发，决定取舍，取舍时自然会保留住核心需求和功能，过滤掉不影响结果的需求。毕竟，互联网时代，时间成本是最大的成本。</p>
+<p>具体实施的时候，就要看技术的取舍之道了。对于给定的一个需求，常常只是一个简单的说明或者设计图，其中隐含的一些边界条件并不明确，而<strong>边界条件对技术设计的复杂度和开发难度影响极大。</strong>所以，开发时应该明白应用场景的边界在哪里，有针对性地选择，才能使实现方案变得简单，也就节省了时间降低了成本。</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><blockquote>
+<p>常识：提高开发效率，需要专心致志做手头的事情</p>
+<p>反常识：提高开发效率，需要适当“三心二意”打破边界</p>
+</blockquote>
+<p>专心致志认真工作当然没有错，错的是仅仅专心于分配给自己的正在做的任务。在软件开发中，程序员很容易陷进一个坑里原地打转，有时候是在一个无关紧要的地方钻牛角尖，有的时候则是在缺少资源的情况下难以前进，而那些资源可能只需要稍微抬头就能找到。小团队更需要注意，需求变动很频繁，可能在专心钻研的这项任务并不是核心，或者很可能马上会变动。</p>
+<p>其实提高开发效率并不是提高个人写代码的速度，而是<strong>整个项目平稳推进的速度。</strong>打破任务和职责的边界，为了项目和产品整体考虑，才能够在团队中发挥更大的作用。适当的“三心二意”，关注一些队友的进展、不同任务的联系、需求的变更情况……就能更加精准定位真正的问题。</p>
+<hr>
+<p>希望对你能有启发。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/storage-design/" rel="next" title="存储方案设计">
+                <i class="fa fa-chevron-left"></i> 存储方案设计
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/build-a-tree/" rel="prev" title="种一棵树">
+                种一棵树 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+

@@ -1,0 +1,639 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Official Website：http://geohash.org/ geohash是啥geo =&amp;gt; geography 将地理信息 hash wiki：https://en.wikipedia.org/wiki/Geohash 一种公共地理信息编码系统，把经纬度地理信息编码后，最终以字符串形式使用 geohash有啥用The main usages of Geohashes are:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="geohash小记">
+<meta property="og:url" content="http://yoursite.com/geohash/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="Official Website：http://geohash.org/ geohash是啥geo =&amp;gt; geography 将地理信息 hash wiki：https://en.wikipedia.org/wiki/Geohash 一种公共地理信息编码系统，把经纬度地理信息编码后，最终以字符串形式使用 geohash有啥用The main usages of Geohashes are:">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xswue.com1.z0.glb.clouddn.com/18-8-25/2702390.jpg">
+<meta property="og:image" content="http://7xswue.com1.z0.glb.clouddn.com/18-8-25/75314674.jpg">
+<meta property="og:updated_time" content="2019-04-05T13:06:43.196Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="geohash小记">
+<meta name="twitter:description" content="Official Website：http://geohash.org/ geohash是啥geo =&amp;gt; geography 将地理信息 hash wiki：https://en.wikipedia.org/wiki/Geohash 一种公共地理信息编码系统，把经纬度地理信息编码后，最终以字符串形式使用 geohash有啥用The main usages of Geohashes are:">
+<meta name="twitter:image" content="http://7xswue.com1.z0.glb.clouddn.com/18-8-25/2702390.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> geohash小记 | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                geohash小记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-08-25T11:21:51+08:00" content="2018-08-25">
+              2018-08-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Official Website：<a href="http://geohash.org/" target="_blank" rel="noopener">http://geohash.org/</a></p>
+<h2 id="geohash是啥"><a href="#geohash是啥" class="headerlink" title="geohash是啥"></a>geohash是啥</h2><p>geo =&gt; geography 将地理信息 hash</p>
+<p>wiki：<a href="https://en.wikipedia.org/wiki/Geohash" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Geohash</a></p>
+<p>一种公共地理信息编码系统，把经纬度地理信息编码后，最终以字符串形式使用</p>
+<h2 id="geohash有啥用"><a href="#geohash有啥用" class="headerlink" title="geohash有啥用"></a>geohash有啥用</h2><p>The main usages of Geohashes are:</p>
+<ul>
+<li>As a unique identifier.</li>
+<li>To represent point data, e.g. in databases.</li>
+</ul>
+<p>简单来说，geohash主要是把地理信息变成一个独特标识，能在数据库中标识坐标点数据。</p>
+<p>经纬度（45.37, 121.7）就挺简洁的，为什么非要转成 c216ne 这样的字符串呢？一定是有好处的。</p>
+<p>好处在于，使用地理数据时是在使用索引，<strong>查询在一个索引远比查两个索引容易</strong>。更厉害的是，<strong>相似字符串表示的是相近的点</strong>，这样，查找附近的目标点就更方便了。</p>
+<p>本质上，geohash做的事情是把二维的经纬度坐标数据转化成了一维的字符串，这是一个降维过程。</p>
+<h2 id="geohash啥原理"><a href="#geohash啥原理" class="headerlink" title="geohash啥原理"></a>geohash啥原理</h2><p>二维降一维很简单，按一定规则把两个数平到一起就行了。难的是，降维后，一维数据还保留了二维数据一定的连续性，这是非常有用的地方。二维平面上连成一片的那些点，降维成一维直线，它们竟还隔得很近。</p>
+<p>这背后的原理是：Z-order curve。使用了数学上 Four iterations of the Z-order curve 的特性。<br><img src="http://7xswue.com1.z0.glb.clouddn.com/18-8-25/2702390.jpg" alt></p>
+<p>此图是一个二维平面，横纵坐标可以看做经纬度，中间是一条连续不断的线，从左上角开始，按「Z」型不断循环扩大画下去，充满整个平面。实际上这条线就是二维数据降维成一维的结果。画到多少呢？越密集，就表示数据的精度多高。</p>
+<p>可见，线上大多数的相邻点在平面上也是相近的，除了一些边界处的点。</p>
+<p>geohash的编码就是如此，横纵坐标分别是经纬度，将横纵坐标按一定精确度划分，再按规则合并到一起（规则：奇数位是横坐标，偶数位是纵坐标），恰好就是按整数从小到大排列的。<br><img src="http://7xswue.com1.z0.glb.clouddn.com/18-8-25/75314674.jpg" alt></p>
+<h2 id="geohash咋实现"><a href="#geohash咋实现" class="headerlink" title="geohash咋实现"></a>geohash咋实现</h2><p>将经纬度转换为Geohash大体可以分为三步曲：</p>
+<ul>
+<li>将纬度(-90, 90)平均分成两个区间(-90, 0)、(0, 90)，如果坐标位置的纬度值在第一区间，则编码是0，否则编码为1。我们用 39.918118 举例，由于39.918118 属于 (0, 90)，所以编码为1，然后我们继续将(0, 90)分成(0, 45)、(45, 90)两个区间，而39.918118 位于(0, 45)，所以编码是0，依次类推，我们进行20次拆分，最后计算39.918118 的编码是 10111000110001011011；经度的处理也是类似，只是经度的范围是(-180, 180)，116.40382的编码是11010010110001101010</li>
+<li>经纬度的编码合并，从0开始，奇数为是纬度，偶数为是经度，得到的编码是1110011101001000111100000011100111001101</li>
+<li>对经纬度合并后的编码，进行base32编码，最终得到wx4g0ffe</li>
+</ul>
+<p>看个例子的效果吧</p>
+<table>
+<thead>
+<tr>
+<th>地点</th>
+<th>经纬度</th>
+<th>Geohash</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>鸟巢</td>
+<td>116.402843,39.999375</td>
+<td>wx4g8c9v</td>
+</tr>
+<tr>
+<td>水立方</td>
+<td>116.3967,39.99932</td>
+<td>wx4g89tk</td>
+</tr>
+<tr>
+<td>故宫</td>
+<td>116.40382,39.918118</td>
+<td>wx4g0ffe</td>
+</tr>
+</tbody>
+</table>
+<h2 id="geohash怎么样"><a href="#geohash怎么样" class="headerlink" title="geohash怎么样"></a>geohash怎么样</h2><p>Z-order curve 是1966年发表，geohash算法是2008年公布。geohash的原理看起来异常简单，只是对 Z-order curve 的简单化用，而用处却很大，因为现在地图计算的场景太多了，时隔40年后互联网的发展推动了许多技术的应用。</p>
+<p>geohash目前具体的应用情况不得而知，但很多实际的地图类产品应用的技术都是由geohash衍生而来，例如 Google 的 Google S2 技术，就是在geohash原理基础上使用了更加复杂的希尔伯特曲线代替 Z-order curve。猜测各家地图应用背后的技术也都类似，实现细节有差异，核心理念都是二维坐标数据降一维，以实现更高效的空间点索引，同时不免带来些边界点抖动。</p>
+<p>明白了地图背后的技术原理，下次打车时就知道了，我都看见司机了，地图上却没有附近的车？没准只是因为恰好在边界点了。咋办，没事走两步~</p>
+<hr>
+<p>参考：</p>
+<ul>
+<li><a href="http://geohash.org/" target="_blank" rel="noopener">http://geohash.org/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Geohash" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Geohash</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Z-order_curve" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Z-order_curve</a></li>
+<li><a href="https://github.com/GongDexing/Geohash" target="_blank" rel="noopener">https://github.com/GongDexing/Geohash</a></li>
+<li><a href="https://halfrost.com/go_spatial_search/" target="_blank" rel="noopener">https://halfrost.com/go_spatial_search/</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/zheng-ze-1/" rel="next" title="认识正则表达式">
+                <i class="fa fa-chevron-left"></i> 认识正则表达式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/image-bed/" rel="prev" title="我的图床解决方案">
+                我的图床解决方案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#geohash是啥"><span class="nav-number">1.</span> <span class="nav-text">geohash是啥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#geohash有啥用"><span class="nav-number">2.</span> <span class="nav-text">geohash有啥用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#geohash啥原理"><span class="nav-number">3.</span> <span class="nav-text">geohash啥原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#geohash咋实现"><span class="nav-number">4.</span> <span class="nav-text">geohash咋实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#geohash怎么样"><span class="nav-number">5.</span> <span class="nav-text">geohash怎么样</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+

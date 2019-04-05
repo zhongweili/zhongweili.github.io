@@ -1,0 +1,688 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="近来开始多多使用 github（我的 github：zhongweili），在考虑要不要开通付费版，就可以创建私有仓库了，恰好学长推荐了 github 学生账号，原来学生账号竟有无限量私有仓库数，果断申请开通。 必备条件 教育网邮箱（.edu.cn 结尾的域名邮箱）  也有网友提到，某些没有 edu 邮箱的学生可以提供学号，总之必须是未毕业大学生 开通步骤 访问 https://education">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Student Deverloper Pack">
+<meta property="og:url" content="http://yoursite.com/student-deverloper-pack/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="近来开始多多使用 github（我的 github：zhongweili），在考虑要不要开通付费版，就可以创建私有仓库了，恰好学长推荐了 github 学生账号，原来学生账号竟有无限量私有仓库数，果断申请开通。 必备条件 教育网邮箱（.edu.cn 结尾的域名邮箱）  也有网友提到，某些没有 edu 邮箱的学生可以提供学号，总之必须是未毕业大学生 开通步骤 访问 https://education">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-05T13:06:43.203Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Student Deverloper Pack">
+<meta name="twitter:description" content="近来开始多多使用 github（我的 github：zhongweili），在考虑要不要开通付费版，就可以创建私有仓库了，恰好学长推荐了 github 学生账号，原来学生账号竟有无限量私有仓库数，果断申请开通。 必备条件 教育网邮箱（.edu.cn 结尾的域名邮箱）  也有网友提到，某些没有 edu 邮箱的学生可以提供学号，总之必须是未毕业大学生 开通步骤 访问 https://education">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Student Deverloper Pack | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Student Deverloper Pack
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-04-13T11:12:46+08:00" content="2018-04-13">
+              2018-04-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>近来开始多多使用 github（我的 github：zhongweili），在考虑要不要开通付费版，就可以创建私有仓库了，恰好学长推荐了 github 学生账号，原来学生账号竟有无限量私有仓库数，果断申请开通。</p>
+<h3 id="必备条件"><a href="#必备条件" class="headerlink" title="必备条件"></a>必备条件</h3><ul>
+<li>教育网邮箱（.edu.cn 结尾的域名邮箱）</li>
+</ul>
+<p>也有网友提到，某些没有 edu 邮箱的学生可以提供学号，总之必须是未毕业大学生</p>
+<h3 id="开通步骤"><a href="#开通步骤" class="headerlink" title="开通步骤"></a>开通步骤</h3><ul>
+<li>访问 <a href="https://education.github.com/" target="_blank" rel="noopener">https://education.github.com/</a></li>
+<li>github 账户绑定 edu 邮箱</li>
+<li>按步骤申请，填写个人信息（注意填上 edu 邮箱），写明申请理由</li>
+<li>等待批准，几分钟就收到了回复</li>
+<li>Get it！</li>
+</ul>
+<h3 id="其他权益"><a href="#其他权益" class="headerlink" title="其他权益"></a>其他权益</h3><p>实际上，国外许多平台都对学生用户提供大幅度优惠，获得 github education 资格的用户同时也就自动获得了一个 student developer pack，内含大量其他企业提供的优惠。整理如下：</p>
+<h4 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h4><ul>
+<li>A hackable text editor for the 21st Century</li>
+<li>github 推荐的免费编辑器</li>
+</ul>
+<h4 id="aws-educate"><a href="#aws-educate" class="headerlink" title="aws educate"></a>aws educate</h4><ul>
+<li>Access to the AWS cloud, free training, and collaboration resources</li>
+<li>亚马逊云服务</li>
+<li>价值 110 刀的 AWS 积分</li>
+</ul>
+<h4 id="bitnami"><a href="#bitnami" class="headerlink" title="bitnami"></a>bitnami</h4><ul>
+<li>Install cloud applications in a single click</li>
+<li>用于下载安装许多常用应用软件的平台，如 xampp</li>
+<li>一年期 49 刀/年 的套餐</li>
+</ul>
+<h4 id="carto"><a href="#carto" class="headerlink" title="carto"></a>carto</h4><ul>
+<li>An open and powerful platform for spatial data analysis, visualization, and application creation.</li>
+<li>数据可视化工具</li>
+<li>两年期高级账户</li>
+</ul>
+<h4 id="CrowdFlower"><a href="#CrowdFlower" class="headerlink" title="CrowdFlower"></a>CrowdFlower</h4><ul>
+<li>Crowdsourcing and data enrichment platform</li>
+<li>一个众包平台</li>
+</ul>
+<h4 id="Datadog"><a href="#Datadog" class="headerlink" title="Datadog"></a>Datadog</h4><ul>
+<li>Cloud-based infrastructure monitoring</li>
+<li>用于运维的监控系统</li>
+<li>两年期高级账户，包括 10 servers</li>
+</ul>
+<h4 id="DigtalOcean"><a href="#DigtalOcean" class="headerlink" title="DigtalOcean"></a>DigtalOcean</h4><ul>
+<li>Simple cloud hosting, built for developers</li>
+<li>云服务器</li>
+<li>价值 50 刀积分</li>
+</ul>
+<h4 id="Flatiron-School"><a href="#Flatiron-School" class="headerlink" title="Flatiron School"></a>Flatiron School</h4><ul>
+<li>Learn Web Development from the premier coding bootcamp for launching developers</li>
+<li>在线编程夏令营学习平台</li>
+<li>价值 149 刀的一个月会员</li>
+</ul>
+<h4 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h4><ul>
+<li>Powerful collaboration, code review, and code management</li>
+<li>github</li>
+<li>无限私有仓库</li>
+</ul>
+<h4 id="GitKraken"><a href="#GitKraken" class="headerlink" title="GitKraken"></a>GitKraken</h4><ul>
+<li>The downright luxurious Git client for Windows, Mac and Linux</li>
+<li>git 客户端</li>
+<li>价值 60 刀的一年期高级账户</li>
+</ul>
+<h4 id="HackHands"><a href="#HackHands" class="headerlink" title="HackHands"></a>HackHands</h4><ul>
+<li>Live programming help available 24/7</li>
+<li>在线程序帮助服务</li>
+<li>价值 25 刀的平台积分</li>
+</ul>
+<h4 id="Microsoft-Imagine-website"><a href="#Microsoft-Imagine-website" class="headerlink" title="Microsoft Imagine website"></a>Microsoft Imagine website</h4><ul>
+<li>A suite of Microsoft Azure cloud services and developer tools, including the Visual Studio IDE</li>
+<li>微软系列服务</li>
+<li>Azure 云，Visual Studio 2015 社区版</li>
+</ul>
+<h4 id="Namecheap"><a href="#Namecheap" class="headerlink" title="Namecheap"></a>Namecheap</h4><ul>
+<li>Affordable registration, hosting, and domain management</li>
+<li>域名服务管理</li>
+<li>价值 9 刀的一年期 SSL 证书，价值 18.99 刀的一年期 .me 域名</li>
+</ul>
+<h4 id="SendGrid"><a href="#SendGrid" class="headerlink" title="SendGrid"></a>SendGrid</h4><ul>
+<li>Email infrastructure as a service</li>
+<li>邮件服务提供</li>
+<li>15K/月 免费邮件</li>
+</ul>
+<h4 id="Sentry"><a href="#Sentry" class="headerlink" title="Sentry"></a>Sentry</h4><ul>
+<li>Track errors in every language, framework, and library</li>
+<li>错误追踪工具</li>
+<li>500000 events/月</li>
+</ul>
+<h4 id="stripe"><a href="#stripe" class="headerlink" title="stripe"></a>stripe</h4><ul>
+<li>Web and mobile payments, built for developers</li>
+<li>应用支付服务</li>
+<li>首批 1000 刀收入免交易费</li>
+</ul>
+<h4 id="Taplytics"><a href="#Taplytics" class="headerlink" title="Taplytics"></a>Taplytics</h4><ul>
+<li>Dynamic A/B testing, smart push notifications and custom analytics for native mobile apps</li>
+<li>移动应用服务提供</li>
+<li>6 个月免费无限制工具使用</li>
+</ul>
+<h4 id="Thinkful"><a href="#Thinkful" class="headerlink" title="Thinkful"></a>Thinkful</h4><ul>
+<li>Learn Fundamentals of Web Development to launch your career as a developer</li>
+<li>在线编程学习平台</li>
+<li>一月课程学习</li>
+</ul>
+<h4 id="transifex"><a href="#transifex" class="headerlink" title="transifex"></a>transifex</h4><ul>
+<li>Localization platform that easily integrates with your code base</li>
+<li>用于发布代码的本地化平台</li>
+<li>价值 99 刀/月的一年期计划</li>
+</ul>
+<h4 id="Travis-CI"><a href="#Travis-CI" class="headerlink" title="Travis CI"></a>Travis CI</h4><ul>
+<li>Continuous integration platform for open source and private projects</li>
+<li>持续集成服务</li>
+<li>69 刀/月使用权</li>
+</ul>
+<h4 id="unreal"><a href="#unreal" class="headerlink" title="unreal"></a>unreal</h4><ul>
+<li>A complete suite of game development tools for PC, console, mobile, web and VR</li>
+<li>游戏开发工具</li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JWT-Tutorial/" rel="next" title="JWT Tutorial">
+                <i class="fa fa-chevron-left"></i> JWT Tutorial
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/modify-domain/" rel="prev" title="使用新的域名">
+                使用新的域名 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#必备条件"><span class="nav-number">1.</span> <span class="nav-text">必备条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开通步骤"><span class="nav-number">2.</span> <span class="nav-text">开通步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他权益"><span class="nav-number">3.</span> <span class="nav-text">其他权益</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Atom"><span class="nav-number">3.1.</span> <span class="nav-text">Atom</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aws-educate"><span class="nav-number">3.2.</span> <span class="nav-text">aws educate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bitnami"><span class="nav-number">3.3.</span> <span class="nav-text">bitnami</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#carto"><span class="nav-number">3.4.</span> <span class="nav-text">carto</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CrowdFlower"><span class="nav-number">3.5.</span> <span class="nav-text">CrowdFlower</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Datadog"><span class="nav-number">3.6.</span> <span class="nav-text">Datadog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DigtalOcean"><span class="nav-number">3.7.</span> <span class="nav-text">DigtalOcean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flatiron-School"><span class="nav-number">3.8.</span> <span class="nav-text">Flatiron School</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Github"><span class="nav-number">3.9.</span> <span class="nav-text">Github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GitKraken"><span class="nav-number">3.10.</span> <span class="nav-text">GitKraken</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HackHands"><span class="nav-number">3.11.</span> <span class="nav-text">HackHands</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Microsoft-Imagine-website"><span class="nav-number">3.12.</span> <span class="nav-text">Microsoft Imagine website</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Namecheap"><span class="nav-number">3.13.</span> <span class="nav-text">Namecheap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SendGrid"><span class="nav-number">3.14.</span> <span class="nav-text">SendGrid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sentry"><span class="nav-number">3.15.</span> <span class="nav-text">Sentry</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stripe"><span class="nav-number">3.16.</span> <span class="nav-text">stripe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Taplytics"><span class="nav-number">3.17.</span> <span class="nav-text">Taplytics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Thinkful"><span class="nav-number">3.18.</span> <span class="nav-text">Thinkful</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transifex"><span class="nav-number">3.19.</span> <span class="nav-text">transifex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Travis-CI"><span class="nav-number">3.20.</span> <span class="nav-text">Travis CI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unreal"><span class="nav-number">3.21.</span> <span class="nav-text">unreal</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+

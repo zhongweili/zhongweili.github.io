@@ -1,0 +1,607 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="博客一直用着github-pages免费服务，虽时有不稳定的情况打开博客会慢一些，不过倒也能忍受，偶然用手机登录竟发现完全进不去。猛然意识到，因为我在学校里用的是教育网，才有此殊遇，若用拨号上网或是手机流量的蜂窝网络，则根本无法访问，所以事实是，github的pages服务被墙了。 偶然的机会，发现了Gitcafe，这是国内仿Github的一个项目托管平台，也提供团队协作方案和企业服务。网站的Ab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Octopress部署到gitcafe">
+<meta property="og:url" content="http://yoursite.com/octopress-gitcafe/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="博客一直用着github-pages免费服务，虽时有不稳定的情况打开博客会慢一些，不过倒也能忍受，偶然用手机登录竟发现完全进不去。猛然意识到，因为我在学校里用的是教育网，才有此殊遇，若用拨号上网或是手机流量的蜂窝网络，则根本无法访问，所以事实是，github的pages服务被墙了。 偶然的机会，发现了Gitcafe，这是国内仿Github的一个项目托管平台，也提供团队协作方案和企业服务。网站的Ab">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-05T13:06:43.200Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Octopress部署到gitcafe">
+<meta name="twitter:description" content="博客一直用着github-pages免费服务，虽时有不稳定的情况打开博客会慢一些，不过倒也能忍受，偶然用手机登录竟发现完全进不去。猛然意识到，因为我在学校里用的是教育网，才有此殊遇，若用拨号上网或是手机流量的蜂窝网络，则根本无法访问，所以事实是，github的pages服务被墙了。 偶然的机会，发现了Gitcafe，这是国内仿Github的一个项目托管平台，也提供团队协作方案和企业服务。网站的Ab">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Octopress部署到gitcafe | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Octopress部署到gitcafe
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-03-19T13:31:09+08:00" content="2015-03-19">
+              2015-03-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>博客一直用着github-pages免费服务，虽时有不稳定的情况打开博客会慢一些，不过倒也能忍受，偶然用手机登录竟发现完全进不去。猛然意识到，因为我在学校里用的是教育网，才有此殊遇，若用拨号上网或是手机流量的蜂窝网络，则根本无法访问，所以事实是，github的pages服务被墙了。</p>
+<p>偶然的机会，发现了<a href="https://gitcafe.com" target="_blank" rel="noopener">Gitcafe</a>，这是国内仿Github的一个项目托管平台，也提供团队协作方案和企业服务。网站的About下写着：We are building two bridges to connect people, one is from college and middle school students to real world projects, the other one is from China to western countries and vice versa.还挺有情怀的。同样是基于版本控制系统Git，让Gitcafe在国内几乎可以替代Github，于是我决定将博客同时部署到Gitcafe平台上。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>几经辗转，在Gitcafe上把项目建了又删，删了又建，终于摸清楚了原委。博客框架是Octopress的开源项目，将其clone到本地，即可自行编码改动及添如文章，github上建立的项目作为本地Octopress工程的remote源，可以进行版本存储和控制，而同时又是一个github-pages项目，可以将项目文件生成网页发布到设定的域名下，这就是博客的建立和部署及控制过程。</p>
+<p>现在要想将博客同时部署在gitcafe提供的域名下，最方便的做法是，新建一个gitcafe-pages项目也作为本地Octopress项目的remote源，而并不对本地项目的源文件进行版本管理，只控制生成网页及发布的部分。这样，每次完成了新的博文，在github上记录源文件的保存，再更新网页发布部分，同时在gitcafe上也更新网页发布部分，那么就完成了在两个页面下的部署。</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>在gitcafe注册帐号，到公钥管理下添加自己的ssh公钥，这样每次提交就不用输入密码了。</li>
+<li>新建与账户名同名的项目，gitcafe会将用户名同名项目默认为gitcafe-pages项目。</li>
+<li><p>设置pages服务，网站又提供<a href="https://gitcafe.com/GitCafe/Help/wiki/Pages-相关帮助#wiki" target="_blank" rel="noopener">帮助文档</a>，但是不要完全按照上面的步骤操作，不需要创建本地git目录和分支，因为Octopress就是本地项目，/_deploy目录下又master分支，所以只需进入/_deploy目录添加remote即可</p>
+<p><code>git remote add gitcafe git@gitcafe.com:zhongweili/zhongweili.git &gt;&gt; /dev/null 2&gt;&amp;1</code></p>
+</li>
+<li><p>随便进行一点修改进行提交，完成后就能访问xxx.gitcafe.io了。</p>
+</li>
+</ol>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li>Octopress项目在github上有两个分支，source分支是在主目录下，控制源文件，master分支是在/_deploy目录下，控制pages服务的网页发布。上面的步骤中是将master分支remote到gitcafe上，并命名为gitcafe分支。</li>
+<li>每次提交网站内容时，要执行<code>rake deploy</code>，实际上是执行的Rakefile文件里的一段脚本内容,具体是进入/_deploy目录进行deploy并提交，只要在这里提交时一并提交到gitcafe上就可以了。</li>
+<li><p>为了不在每次提交博文时都写代码进行remote，只要将代码写入Rakefile里面就行了。</p>
+<pre><code>cd &quot;#{deploy_dir}&quot; do
+    system &quot;git add -A&quot;
+    message = &quot;Site updated at #{Time.now.utc}&quot;
+    system &quot;git commit -m \&quot;#{message}\&quot;&quot;
+    puts &quot;\n## Pushing generated #{deploy_dir} website&quot;
+    Bundler.with_clean_env { system &quot;git push origin #{deploy_branch}&quot; }
+    puts &quot;\n## Github Pages deploy complete&quot;
+    system &quot;git remote add gitcafe git@gitcafe.com:zhongweili/zhongweili.git &gt;&gt; /dev/null 2&gt;&amp;1&quot;
+    system &quot;git push -u gitcafe master:gitcafe-pages&quot;
+    puts &quot;\n## Gitcafe Pages deploy complete&quot;
+end
+</code></pre></li>
+<li><p>如果有自己的域名，同时在github和gitcafe上设置域名的解析，可以达到访问你的域名自动跳转到github或gitcafe上的目的。</p>
+</li>
+</ul>
+<hr>
+<p>我发现国外有一些提供很有趣的服务的网站，比如<a href="http://zh-tw.gravatar.com" target="_blank" rel="noopener">gravatar</a>的大头贴服务，<a href="https://disqus.com" target="_blank" rel="noopener">disqus</a>的评论系统，<a href="https://ifttt.com" target="_blank" rel="noopener">IFTTT</a>的串联信息，恰到好处地展现互联网的连接，我有时候想那大概是在自由创新的互联网氛围下产生的，可惜的是在国内大部分都不能正常使用。国内有很多这样的模仿者，像模仿disqus的<a href="http://duoshuo.com" target="_blank" rel="noopener">多说</a>，模仿github的gitcafe等，虽然功能齐全，但是却似乎发现商业模式并不一样，都为适应国内的环境而有变化，因为面临着异常激烈的竞争和盈利压力，考虑的从来都是实用性，很难形成国外网站那种社区氛围。当然，国内的互联网企业也渐渐形成了自己的竞争力……这个问题先按下不表了。    </p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/finity-and-infinity/" rel="next" title="有尽亦无穷">
+                <i class="fa fa-chevron-left"></i> 有尽亦无穷
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/wechat-subscribes-i-like/" rel="prev" title="我喜欢的微信订阅号">
+                我喜欢的微信订阅号 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">3.</span> <span class="nav-text">说明</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+
