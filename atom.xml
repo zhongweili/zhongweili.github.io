@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Zhongwei&#39;s blog</title>
+  
+  <subtitle>Notes and Random Thoughts</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-04-05T13:06:43.183Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Zhongwei</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>互联网常用数据指标</title>
+    <link href="http://yoursite.com/allacronyms/"/>
+    <id>http://yoursite.com/allacronyms/</id>
+    <published>2019-01-17T02:59:40.000Z</published>
+    <updated>2019-04-05T13:06:43.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;年底了会议上都有总结分析，经常听到不少英文缩写名词，职场新人表示一头雾水。在星球里也常看到大佬分享的一些数据指标，不了解具体什么意思又懒得查，即使Google一下也很难立即找到答案（大多缩写词在不同领域有不同含义，不同网站解释不一），然后就不了了之，这怎么能培养「数据感」呢
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我的图床解决方案</title>
+    <link href="http://yoursite.com/image-bed/"/>
+    <id>http://yoursite.com/image-bed/</id>
+    <published>2019-01-12T15:33:59.000Z</published>
+    <updated>2019-04-05T13:06:43.198Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;选择图床&quot;&gt;&lt;a href=&quot;#选择图床&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>geohash小记</title>
+    <link href="http://yoursite.com/geohash/"/>
+    <id>http://yoursite.com/geohash/</id>
+    <published>2018-08-25T03:21:51.000Z</published>
+    <updated>2019-04-05T13:06:43.196Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Official Website：&lt;a href=&quot;http://geohash.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://geohash.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;geohash是啥&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>认识正则表达式</title>
+    <link href="http://yoursite.com/zheng-ze-1/"/>
+    <id>http://yoursite.com/zheng-ze-1/</id>
+    <published>2018-07-17T13:40:06.000Z</published>
+    <updated>2019-04-05T13:06:43.206Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;所谓语言之语言——元语言&lt;/p&gt;
+&lt;p&gt;所谓认知之认知——元认知&lt;/p&gt;
+&lt;p&gt;所谓程序之程序——元程序&lt;/p&gt;
+&lt;p&gt;今天来看一看字符串，&lt;/p&gt;
+&lt;p&gt;字符串之字符串——&lt;del&gt;元字符串&lt;/del&gt;，其实是&lt;strong&gt;正则表达式&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>用Shell处理Excel文件</title>
+    <link href="http://yoursite.com/use-shell-fix-excel/"/>
+    <id>http://yoursite.com/use-shell-fix-excel/</id>
+    <published>2018-07-13T12:05:04.000Z</published>
+    <updated>2019-04-05T13:06:43.205Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;拿到的数据统计文件常常是Excel，要想在shell里用强大的Linux命令处理，需要先对文件进行转换。&lt;/p&gt;
+&lt;p&gt;两种方式：将Excel文件另存为.csv或.txt文件。其中又各有不同的数据格式：&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PHP脚本基础</title>
+    <link href="http://yoursite.com/php-script-basic/"/>
+    <id>http://yoursite.com/php-script-basic/</id>
+    <published>2018-07-11T05:04:03.000Z</published>
+    <updated>2019-04-05T13:06:43.201Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;PHP脚本基础&quot;&gt;&lt;a href=&quot;#PHP脚本基础&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Const关键字的使用</title>
+    <link href="http://yoursite.com/use-const/"/>
+    <id>http://yoursite.com/use-const/</id>
+    <published>2018-07-09T06:24:30.000Z</published>
+    <updated>2019-04-05T13:06:43.204Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;阅读 Redis 源码时遇到很多地方使用 const 关键字，只知道这个修饰符用来定义常量，不明白详细用法，遂做总结。&lt;/p&gt;
+&lt;h3 id=&quot;const的作用&quot;&gt;&lt;a href=&quot;#const的作用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mac与服务器传文件</title>
+    <link href="http://yoursite.com/transfer-files-from-mac/"/>
+    <id>http://yoursite.com/transfer-files-from-mac/</id>
+    <published>2018-07-05T11:14:03.000Z</published>
+    <updated>2019-04-05T13:06:43.204Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Mac与服务器传文件&quot;&gt;&lt;a href=&quot;#Mac与服务器传文件&quot; class=&quot;headerlink&quot; title=&quot;Mac与服务器传文件&quot;&gt;&lt;/a&gt;Mac与服务器传文件&lt;/h2&gt;&lt;p&gt;存在堡垒机（跳板机）时，scp命令失效。传小文件最好用的方法是
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Charles安装使用</title>
+    <link href="http://yoursite.com/use-charles/"/>
+    <id>http://yoursite.com/use-charles/</id>
+    <published>2018-07-04T13:04:01.000Z</published>
+    <updated>2019-04-05T13:06:43.204Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Charles是一个web调试代理工具，可以高效查看web访问的HTTP流量，尤其适用于移动端访问数据的抓取。&lt;/p&gt;
+&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用新的域名</title>
+    <link href="http://yoursite.com/modify-domain/"/>
+    <id>http://yoursite.com/modify-domain/</id>
+    <published>2018-05-13T15:11:14.000Z</published>
+    <updated>2019-04-05T13:06:43.199Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;博客更换了新的域名
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Student Deverloper Pack</title>
+    <link href="http://yoursite.com/student-deverloper-pack/"/>
+    <id>http://yoursite.com/student-deverloper-pack/</id>
+    <published>2018-04-13T03:12:46.000Z</published>
+    <updated>2019-04-05T13:06:43.203Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;近来开始多多使用 github（我的 github：zhongweili），在考虑要不要开通付费版，就可以创建私有仓库了，恰好学长推荐了 github 学生账号，原来学生账号竟有无限量私有仓库数，果断申请开通。&lt;/p&gt;
+&lt;h3 id=&quot;必备条件&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JWT Tutorial</title>
+    <link href="http://yoursite.com/JWT-Tutorial/"/>
+    <id>http://yoursite.com/JWT-Tutorial/</id>
+    <published>2018-01-28T02:00:27.000Z</published>
+    <updated>2019-04-05T13:06:43.182Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;为什么使用-JWT&quot;&gt;&lt;a href=&quot;#为什么使用-JWT&quot; class=&quot;headerlink&quot; title=&quot;为什么使用 JWT&quot;&gt;&lt;/a&gt;为什么使用 JWT&lt;/h3&gt;&lt;p&gt;JWT 是为了代替基于 session 的认证机制，使用 session
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我悠悠醒转</title>
+    <link href="http://yoursite.com/xiao-zhuan/"/>
+    <id>http://yoursite.com/xiao-zhuan/</id>
+    <published>2017-12-31T15:30:43.000Z</published>
+    <updated>2019-04-05T13:06:43.206Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTTPS 由来</title>
+    <link href="http://yoursite.com/HTTPS/"/>
+    <id>http://yoursite.com/HTTPS/</id>
+    <published>2017-11-19T01:48:52.000Z</published>
+    <updated>2019-04-05T13:06:43.182Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;网络世界纷繁复杂，绝大部分信息传输都仰仗 HTTP 协议。每次访问一个网页，就像是在外卖 App 上下单，商户将食物打包，再由外卖小哥接单送达用户，数不胜数的订单同时进去，这背后早有 HTTP 协议支持，不会送错。&lt;/p&gt;
+&lt;p&gt;HTTP
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Go 语言中的接口</title>
+    <link href="http://yoursite.com/go-interface/"/>
+    <id>http://yoursite.com/go-interface/</id>
+    <published>2017-11-18T15:36:48.000Z</published>
+    <updated>2019-04-05T13:06:43.197Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Go 语言中设计最精妙的部分是 interface。&lt;/p&gt;
+&lt;p&gt;有人甚至将 interface 翻译为“界面”而非“接口”，可见 Go 语言中的接口独树一帜，与 C++ 颇不一样。&lt;/p&gt;
+&lt;h3 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Go 语言中的面向对象</title>
+    <link href="http://yoursite.com/go-object/"/>
+    <id>http://yoursite.com/go-object/</id>
+    <published>2017-11-15T04:13:12.000Z</published>
+    <updated>2019-04-05T13:06:43.197Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;一切皆是对象。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这在 Java 这种强面向对象语言中是一条铁律。然而什么是对象，为什么一切都是对象？初学者很难理解。&lt;/p&gt;
+&lt;p&gt;在 Java、C++
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Go 语言的包管理</title>
+    <link href="http://yoursite.com/go-package/"/>
+    <id>http://yoursite.com/go-package/</id>
+    <published>2017-11-13T15:56:29.000Z</published>
+    <updated>2019-04-05T13:06:43.197Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;GOPATH&quot;&gt;&lt;a href=&quot;#GOPATH&quot; class=&quot;headerlink&quot; title=&quot;GOPATH&quot;&gt;&lt;/a&gt;GOPATH&lt;/h3&gt;&lt;p&gt;安装 Go 时配置环境变量除了 GOROOT 还有一个 GOPATH，GOROOT 是 go
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>种一棵树</title>
+    <link href="http://yoursite.com/build-a-tree/"/>
+    <id>http://yoursite.com/build-a-tree/</id>
+    <published>2017-11-01T11:14:56.000Z</published>
+    <updated>2019-04-05T13:06:43.194Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;种一棵树，最好的时间是十年前，其次是现在。学编程亦如此。&lt;/p&gt;
+&lt;p&gt;我决定新学一门编程语言，一方面从零学起可以补漏一些计算机基础知识，另一方面为以后的工作储备，多一点发展方向。&lt;/p&gt;
+&lt;p&gt;为什么选择学习Go？左耳朵耗子的&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>项目开发中的反常识思考</title>
+    <link href="http://yoursite.com/thinking-in-projects/"/>
+    <id>http://yoursite.com/thinking-in-projects/</id>
+    <published>2017-10-26T13:29:32.000Z</published>
+    <updated>2019-04-05T13:06:43.203Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这学期集中精力做一个网站开发的横向项目，自知没有专业团队的水准，很多地方也不符合业内规范标准的方法，不过在这个过程中不断摸索着，具体的开发方法、处理问题的思路、团队成员的合作、进度的把握等等各方面都有所接触，总是有些体会的。趁着项目暂停的机会，做一些反思总结。&lt;/p&gt;
+&lt;p
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>存储方案设计</title>
+    <link href="http://yoursite.com/storage-design/"/>
+    <id>http://yoursite.com/storage-design/</id>
+    <published>2017-08-02T15:50:16.000Z</published>
+    <updated>2019-04-05T13:06:43.202Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;资源预估&quot;&gt;&lt;a href=&quot;#资源预估&quot; class=&quot;headerlink&quot; title=&quot;资源预估&quot;&gt;&lt;/a&gt;资源预估&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;存储数据库，MySQL 建几张表?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;是否需要缓存，Redis or
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
