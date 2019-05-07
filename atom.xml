@@ -23,14 +23,13 @@
     <published>2019-01-17T02:59:40.000Z</published>
     <updated>2019-04-05T13:06:43.183Z</updated>
     
+    <content type="html"><![CDATA[<p>年底了会议上都有总结分析，经常听到不少英文缩写名词，职场新人表示一头雾水。在星球里也常看到大佬分享的一些数据指标，不了解具体什么意思又懒得查，即使Google一下也很难立即找到答案（大多缩写词在不同领域有不同含义，不同网站解释不一），然后就不了了之，这怎么能培养「数据感」呢？索性一次性搜索整理了互联网圈常用数据指标英文缩写词。</p><p>数据主要来源是：Wikipedia、techopedia、allacronyms（一个首字母缩写词典网站）</p><ul><li><a href="https://en.wikipedia.org/" target="_blank" rel="noopener">https://en.wikipedia.org/</a></li><li><a href="https://www.techopedia.com/" target="_blank" rel="noopener">https://www.techopedia.com/</a></li><li><a href="https://www.allacronyms.com/" target="_blank" rel="noopener">https://www.allacronyms.com/</a></li></ul><h3 id="1-PV"><a href="#1-PV" class="headerlink" title="1. PV"></a>1. PV</h3><p>全称：page view<br>定义：每当一个web页面在一个用户浏览器中成功加载，就产生一个PV<br>解释：PV和点击量不同，每当请求服务器就计入点击，且可能同时请求多个资源文件产生多次点击，而当追踪代码或脚本完全加载后才计入PV，一个PV可能包括多个点击。<br>我的理解：PV反映的是网站的访问量情况，每次刷新页面，就会加载网页中script，也就计入PV，那么显然PV是可以刷的。</p><h3 id="2-UV"><a href="#2-UV" class="headerlink" title="2. UV"></a>2. UV</h3><p>全称：unique visitor<br>定义：一段时间（通常一个月）内独立访客（按IP计算，除去爬虫等非正常访问）数<br>解释：visitor指的不是用户，而是独立访客，通常用计算机cookie标识，那么，用户删除cookie、更换浏览器、修改IP等行为访问同一网站，会计入多次UV。对于移动端App，通常安装时会生成访问者ID标识独立访客，删除应用缓存和数据不会清除此ID，在卸载重装后会更新ID，也就增加UV。<br>我的理解：UV根本上是想统一网站访问的自然人数量，那么应该尽可能用多维度真人指标，单纯用cookie不能唯一标识用户，现在移动端更准确的统计可能要包含设备号、手机号、甚至身份证号这些数据，才能得到确切的访问人数。</p><h3 id="3-DAU"><a href="#3-DAU" class="headerlink" title="3. DAU"></a>3. DAU</h3><p>全称：daily active user<br>定义：在一个给定的日期里有多少用户访问或互动一个互联网产品或服务。<br>解释：多用于移动应用，active指活跃，user指独立访客。<br>我的理解：DAU是反映应用受欢迎程度的重要指标，这里面的active没有确切定义，不同active的标准可能得到的数据差别很大，打开App就算活跃？停留10分钟算活跃？发表一些内容才算活跃？</p><h3 id="4-MAU"><a href="#4-MAU" class="headerlink" title="4. MAU"></a>4. MAU</h3><p>全称：monthly active user<br>定义：类似DAU</p><h3 id="5-CR"><a href="#5-CR" class="headerlink" title="5. CR"></a>5. CR</h3><p>全称：conversion rate<br>定义：转化率是独立访客转化为客户、订阅者、用户的比率<br>解释：转化率=转化数量/独立访客总数<br>我的理解：对于线上应用/服务/课程，CR这个指标应该比较容易统计，有了这个数据后也应该能够指导产品和营销，比如统计细分粒度的CR知晓不同渠道营销情况</p><h3 id="6-ROI"><a href="#6-ROI" class="headerlink" title="6. ROI"></a>6. ROI</h3><p>全称：return on investment<br>定义：投资回报率是一定资源投资所产生的利润与投资成本之比。<br>解释：ROI=回报/投资<br>我的理解：ROI是营销投资的核心指标，不同领域似乎这个值的计算方式也不太一样，我理解若是非常简单的一笔买进卖出，对比 成本利润率=利润/投入 和 投资回报率=产出/投入，ROI=成本收益率+1，而ROI关注的是一个周期的长期投资回报，产出不等于成本+利润。ROI要从长远的投资角度看待，而不能看成单次生意的资金使用效率。</p><h3 id="7-CPI"><a href="#7-CPI" class="headerlink" title="7. CPI"></a>7. CPI</h3><p>全称：cost per impression<br>定义：广告客户同意为某一广告的每千次浏览支付的费用。<br>解释：只计算浏览量，不计算点击数，由广告服务器监控计算。通常会根据每月或每季度给定广告客户的预期支出调整展示率。<br>我的理解：看定义主语是广告主，但这个值不是广告主意愿定的，而是整个市场决定的，这个指标衡量的是不同渠道广告位的价值。但也不是简单的CPI越小越划算，需要看广告真正触达的用户群体的转化效果。</p><h3 id="8-GMV"><a href="#8-GMV" class="headerlink" title="8. GMV"></a>8. GMV</h3><p>全称：gross merchandise volume<br>定义：在一定时间范围内通过特定市场销售的商品的总销售额。<br>解释：总收入，但不代表净销售收入，不包含折扣、成本、和产品退货等。<br>我的理解：这个指标表示的是一个公司/一个产品的总体量，而不同产品的利润率/抽成比不同，盈利模式不一样，所以这个指标不好横向对比，用处更多在于纵向对比，以及可以帮助计算一些钱的使用效率。</p>]]></content>
+    
     <summary type="html">
     
       
       
-        
-        
-          &lt;p&gt;年底了会议上都有总结分析，经常听到不少英文缩写名词，职场新人表示一头雾水。在星球里也常看到大佬分享的一些数据指标，不了解具体什么意思又懒得查，即使Google一下也很难立即找到答案（大多缩写词在不同领域有不同含义，不同网站解释不一），然后就不了了之，这怎么能培养「数据感」呢
-        
+        &lt;p&gt;年底了会议上都有总结分析，经常听到不少英文缩写名词，职场新人表示一头雾水。在星球里也常看到大佬分享的一些数据指标，不了解具体什么意思又懒得查，即使Google一下也很难立即找到答案（大多缩写词在不同领域有不同含义，不同网站解释不一），然后就不了了之，这怎么能培养「数据感」呢
       
     
     </summary>
@@ -45,14 +44,13 @@
     <published>2019-01-12T15:33:59.000Z</published>
     <updated>2019-04-05T13:06:43.198Z</updated>
     
+    <content type="html"><![CDATA[<h2 id="选择图床"><a href="#选择图床" class="headerlink" title="选择图床"></a>选择图床</h2><p>日常写东西已经离不开markdown语言。在markdown文本中，每一个图片实际是个链接，指向存放图片的地方——也就是「图床」。</p><p>图床有多种，免费的、收费的、适合开发者的、适合非技术人员的、自建的、公共的……网上搜索会找到一大批。</p><p>一直以来，最值得信赖的是「七牛云」，云存储技术扎实，免费10G存储空间绝对够用，存储资源管理功能完善，最适合作为个人图床使用。直到今年，七牛云要求用户须要有备案域名才可正常使用，无奈只好弃用。</p><p>接下来去哪里寻找云存储呢？实际上大部分提供网络内容服务的产品都是一个存储平台，例如微博、微信公众号、简书，将图片上传上去，通过链接能够公开访问，这就是图床了。我要找的是最稳定可靠的服务，不会突然关闭、突然有资质要求，那github是最佳选择。</p><h2 id="图片工作流"><a href="#图片工作流" class="headerlink" title="图片工作流"></a>图片工作流</h2><p>使用github作为图床，具体如何使用？</p><ol><li>建立一个github公开仓库</li><li>将图片保存到本地仓库目录</li><li>提交到github仓库</li></ol><p>这完全可以使用脚本完成，一个命令代替多步操作。</p><p>但脚本可以完成更多事情，何不想一想把所有事情自动化完成？</p><p>我期望的效果：截图-调整图片大小-保存-上传-得到图片链接地址-转成markdown地址，一气呵成。</p><p>神奇Alfred可以实现所有这些步骤，并且串联起来。</p><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><h3 id="Alfred新建workflowy"><a href="#Alfred新建workflowy" class="headerlink" title="Alfred新建workflowy"></a>Alfred新建workflowy</h3><p><img src="https://raw.githubusercontent.com/zhongweili/images/master/20181115/alfred-img_1542251027.png" alt="Alfred-img"></p><p><a href="https://www.imagemagick.org" target="_blank" rel="noopener">imageMagick</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"> <span class="comment">#定义常量</span></span><br><span class="line">git_repo=<span class="string">"git@github.com:zhongweili/images.git"</span></span><br><span class="line">git_path=/Users/$(whoami)/sub</span><br><span class="line">repo_name=<span class="string">"images"</span></span><br><span class="line">github_prefix=<span class="string">"https://raw.githubusercontent.com/zhongweili/images/master"</span></span><br><span class="line">cur_date=$(date +<span class="string">"%Y%m%d"</span>)</span><br><span class="line">folder=/Users/$(whoami)/Desktop/</span><br><span class="line"><span class="comment">#&#123;query&#125;是alfred workflowy的参数</span></span><br><span class="line">filename=`<span class="built_in">echo</span> <span class="string">"&#123;query&#125;"</span> | tr <span class="string">'A-Z'</span> <span class="string">'a-z'</span> | tr -s <span class="string">' '</span> | tr <span class="string">' '</span> <span class="string">'_'</span>`_`date +%s`.png</span><br><span class="line">path=<span class="variable">$folder</span><span class="variable">$filename</span></span><br><span class="line"><span class="comment">#截屏</span></span><br><span class="line">screencapture -i <span class="variable">$path</span></span><br><span class="line"><span class="keyword">while</span> [ ! -f <span class="variable">$path</span> ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">sleep 1</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">width=`/usr/bin/osascript &lt;&lt; EOT</span><br><span class="line">tell application <span class="string">"System Events"</span></span><br><span class="line">        activate</span><br><span class="line">        <span class="built_in">set</span> theWidth to (display dialog <span class="string">"Enter the width"</span> default answer <span class="string">"650"</span>)</span><br><span class="line">end tell</span><br><span class="line"><span class="built_in">set</span> theWidth to the text returned of theWidth as <span class="built_in">integer</span></span><br><span class="line"><span class="built_in">return</span> theWidth</span><br><span class="line">EOT`</span><br><span class="line"><span class="keyword">while</span> [ -z <span class="string">"<span class="variable">$width</span>"</span> ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">sleep 1</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment">#使用imageMagick的convert方法</span></span><br><span class="line">convert <span class="variable">$path</span> -resize <span class="string">"`echo <span class="variable">$width</span>`x&gt;"</span> <span class="variable">$path</span></span><br><span class="line"> <span class="keyword">if</span> [  ! -d <span class="string">"<span class="variable">$git_path</span>/<span class="variable">$repo_name</span>/.git"</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">cd</span> <span class="variable">$git_path</span>  </span><br><span class="line">    git <span class="built_in">clone</span> --quiet <span class="variable">$git_repo</span>  </span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$git_path</span>/<span class="variable">$repo_name</span>"</span> &amp;&amp; \</span><br><span class="line">ls   | grep -v <span class="variable">$cur_date</span> | xargs rm -rf &amp;&amp;\</span><br><span class="line"> <span class="keyword">if</span> [ -f <span class="string">"<span class="variable">$git_path</span>/<span class="variable">$repo_name</span>/<span class="variable">$cur_date</span>/<span class="variable">$filename</span>"</span> ]</span><br><span class="line"><span class="keyword">then</span> </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$github_prefix</span>/<span class="variable">$cur_date</span>/<span class="variable">$filename</span>"</span></span><br><span class="line">    <span class="built_in">exit</span> 0</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment">#按日期建立文件夹</span></span><br><span class="line">mkdir -p <span class="variable">$git_path</span>/<span class="variable">$repo_name</span>/<span class="variable">$cur_date</span></span><br><span class="line">cp <span class="variable">$path</span> <span class="variable">$git_path</span>/<span class="variable">$repo_name</span>/<span class="variable">$cur_date</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$git_path</span>/<span class="variable">$repo_name</span> &amp;&amp; \</span><br><span class="line">git add  <span class="string">"<span class="variable">$cur_date</span>"</span> &gt; /dev/null  &amp;&amp;\</span><br><span class="line">git commit  -m <span class="string">"<span class="variable">$cur_date</span> <span class="variable">$filename</span>"</span> &gt;/dev/null  &amp;&amp;\</span><br><span class="line">git push --quiet origin master  &amp;&amp;\</span><br><span class="line"><span class="comment">#输出结果到剪切板</span></span><br><span class="line">result=<span class="string">"<span class="variable">$github_prefix</span>/<span class="variable">$cur_date</span>/<span class="variable">$filename</span>"</span></span><br><span class="line"><span class="built_in">echo</span> \![&#123;query&#125;]\(<span class="variable">$result</span>\) | pbcopy</span><br><span class="line"><span class="comment">#删除桌面文件</span></span><br><span class="line">rm <span class="variable">$path</span></span><br></pre></td></tr></table></figure>]]></content>
+    
     <summary type="html">
     
       
       
-        
-        
-          &lt;h2 id=&quot;选择图床&quot;&gt;&lt;a href=&quot;#选择图床&quot; class=&quot;headerlink&quot;
-        
+        &lt;h2 id=&quot;选择图床&quot;&gt;&lt;a href=&quot;#选择图床&quot; class=&quot;headerlink&quot; title=&quot;选择图床&quot;&gt;&lt;/a&gt;选择图床&lt;/h2&gt;&lt;p&gt;日常写东西已经离不开markdown语言。在markdown文本中，每一个图片实际是个链接，指向存放图片的地方——也就是「图
       
     
     </summary>
@@ -67,15 +65,14 @@
     <published>2018-08-25T03:21:51.000Z</published>
     <updated>2019-04-05T13:06:43.196Z</updated>
     
+    <content type="html"><![CDATA[<p>Official Website：<a href="http://geohash.org/" target="_blank" rel="noopener">http://geohash.org/</a></p><h2 id="geohash是啥"><a href="#geohash是啥" class="headerlink" title="geohash是啥"></a>geohash是啥</h2><p>geo =&gt; geography 将地理信息 hash</p><p>wiki：<a href="https://en.wikipedia.org/wiki/Geohash" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Geohash</a></p><p>一种公共地理信息编码系统，把经纬度地理信息编码后，最终以字符串形式使用</p><h2 id="geohash有啥用"><a href="#geohash有啥用" class="headerlink" title="geohash有啥用"></a>geohash有啥用</h2><p>The main usages of Geohashes are:</p><ul><li>As a unique identifier.</li><li>To represent point data, e.g. in databases.</li></ul><p>简单来说，geohash主要是把地理信息变成一个独特标识，能在数据库中标识坐标点数据。</p><p>经纬度（45.37, 121.7）就挺简洁的，为什么非要转成 c216ne 这样的字符串呢？一定是有好处的。</p><p>好处在于，使用地理数据时是在使用索引，<strong>查询在一个索引远比查两个索引容易</strong>。更厉害的是，<strong>相似字符串表示的是相近的点</strong>，这样，查找附近的目标点就更方便了。</p><p>本质上，geohash做的事情是把二维的经纬度坐标数据转化成了一维的字符串，这是一个降维过程。</p><h2 id="geohash啥原理"><a href="#geohash啥原理" class="headerlink" title="geohash啥原理"></a>geohash啥原理</h2><p>二维降一维很简单，按一定规则把两个数平到一起就行了。难的是，降维后，一维数据还保留了二维数据一定的连续性，这是非常有用的地方。二维平面上连成一片的那些点，降维成一维直线，它们竟还隔得很近。</p><p>这背后的原理是：Z-order curve。使用了数学上 Four iterations of the Z-order curve 的特性。<br><img src="http://7xswue.com1.z0.glb.clouddn.com/18-8-25/2702390.jpg" alt></p><p>此图是一个二维平面，横纵坐标可以看做经纬度，中间是一条连续不断的线，从左上角开始，按「Z」型不断循环扩大画下去，充满整个平面。实际上这条线就是二维数据降维成一维的结果。画到多少呢？越密集，就表示数据的精度多高。</p><p>可见，线上大多数的相邻点在平面上也是相近的，除了一些边界处的点。</p><p>geohash的编码就是如此，横纵坐标分别是经纬度，将横纵坐标按一定精确度划分，再按规则合并到一起（规则：奇数位是横坐标，偶数位是纵坐标），恰好就是按整数从小到大排列的。<br><img src="http://7xswue.com1.z0.glb.clouddn.com/18-8-25/75314674.jpg" alt></p><h2 id="geohash咋实现"><a href="#geohash咋实现" class="headerlink" title="geohash咋实现"></a>geohash咋实现</h2><p>将经纬度转换为Geohash大体可以分为三步曲：</p><ul><li>将纬度(-90, 90)平均分成两个区间(-90, 0)、(0, 90)，如果坐标位置的纬度值在第一区间，则编码是0，否则编码为1。我们用 39.918118 举例，由于39.918118 属于 (0, 90)，所以编码为1，然后我们继续将(0, 90)分成(0, 45)、(45, 90)两个区间，而39.918118 位于(0, 45)，所以编码是0，依次类推，我们进行20次拆分，最后计算39.918118 的编码是 10111000110001011011；经度的处理也是类似，只是经度的范围是(-180, 180)，116.40382的编码是11010010110001101010</li><li>经纬度的编码合并，从0开始，奇数为是纬度，偶数为是经度，得到的编码是1110011101001000111100000011100111001101</li><li>对经纬度合并后的编码，进行base32编码，最终得到wx4g0ffe</li></ul><p>看个例子的效果吧</p><table><thead><tr><th>地点</th><th>经纬度</th><th>Geohash</th></tr></thead><tbody><tr><td>鸟巢</td><td>116.402843,39.999375</td><td>wx4g8c9v</td></tr><tr><td>水立方</td><td>116.3967,39.99932</td><td>wx4g89tk</td></tr><tr><td>故宫</td><td>116.40382,39.918118</td><td>wx4g0ffe</td></tr></tbody></table><h2 id="geohash怎么样"><a href="#geohash怎么样" class="headerlink" title="geohash怎么样"></a>geohash怎么样</h2><p>Z-order curve 是1966年发表，geohash算法是2008年公布。geohash的原理看起来异常简单，只是对 Z-order curve 的简单化用，而用处却很大，因为现在地图计算的场景太多了，时隔40年后互联网的发展推动了许多技术的应用。</p><p>geohash目前具体的应用情况不得而知，但很多实际的地图类产品应用的技术都是由geohash衍生而来，例如 Google 的 Google S2 技术，就是在geohash原理基础上使用了更加复杂的希尔伯特曲线代替 Z-order curve。猜测各家地图应用背后的技术也都类似，实现细节有差异，核心理念都是二维坐标数据降一维，以实现更高效的空间点索引，同时不免带来些边界点抖动。</p><p>明白了地图背后的技术原理，下次打车时就知道了，我都看见司机了，地图上却没有附近的车？没准只是因为恰好在边界点了。咋办，没事走两步~</p><hr><p>参考：</p><ul><li><a href="http://geohash.org/" target="_blank" rel="noopener">http://geohash.org/</a></li><li><a href="https://en.wikipedia.org/wiki/Geohash" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Geohash</a></li><li><a href="https://en.wikipedia.org/wiki/Z-order_curve" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Z-order_curve</a></li><li><a href="https://github.com/GongDexing/Geohash" target="_blank" rel="noopener">https://github.com/GongDexing/Geohash</a></li><li><a href="https://halfrost.com/go_spatial_search/" target="_blank" rel="noopener">https://halfrost.com/go_spatial_search/</a></li></ul>]]></content>
+    
     <summary type="html">
     
       
       
-        
-        
-          &lt;p&gt;Official Website：&lt;a href=&quot;http://geohash.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://geohash.org/&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;geohash是啥&quot;&gt;&lt;a
-        
+        &lt;p&gt;Official Website：&lt;a href=&quot;http://geohash.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://geohash.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;geohash是啥&quot;&gt;&lt;a href=&quot;#ge
       
     
     </summary>
@@ -90,19 +87,18 @@
     <published>2018-07-17T13:40:06.000Z</published>
     <updated>2019-04-05T13:06:43.206Z</updated>
     
+    <content type="html"><![CDATA[<p>所谓语言之语言——元语言</p><p>所谓认知之认知——元认知</p><p>所谓程序之程序——元程序</p><p>今天来看一看字符串，</p><p>字符串之字符串——<del>元字符串</del>，其实是<strong>正则表达式</strong>。</p><p>正则表达式是为描述字符串的字符串，实际上是给字符串定义了一系列规则，用处在于可以高效地进行<strong>字符串匹配</strong>。<br>例如，email地址是个符合特定规则的字符串，用户注册时填写的email地址是不是合法呢？将合法email的规则用正则表达式表示出来，则立即可以检验用户输入的字符串了。</p><p>接下来的问题是，正则表达式都有哪些规则？然后列出1，2，3……全都背下来就学会正则了。问题是太懒，没心思背。</p><p>不如退回来，以设计正则表达式的思路来想，正则表达式是字符串的字符串，怎样用最简洁的规则能描述所有的字符串呢？就像欧几里得用五条公理定义出整个几何世界一样！</p><p>想想怎样用化学式表示万事万物的？规则的意义在于归类，首先要将万事万物分到不可再分的元素，才能从中寻出规律，组成化学式。字符串的原子结构很明了，就是字符，按照ASCII标准，一共255个，可做简单分类：数字、字母、其他符号。</p><p>字符已归类，接下来直接匹配，<code>\d</code>匹配一个数字（digit），<code>\w</code>匹配一个字母或数字（word），何意？规则的本质在于映射，用简易表达式映射繁复字符串，就是正则表达式做的事情。所以，正则表达式能够「以一映射多」，当然也能「以短映射长」，例如：</p><ul><li>\d{5}匹配5个数字</li><li>\w{3,8}匹配3到8个字母或数字</li><li>A+匹配1个或多个A</li></ul>]]></content>
+    
     <summary type="html">
     
       
       
-        
-        
-          &lt;p&gt;所谓语言之语言——元语言&lt;/p&gt;
+        &lt;p&gt;所谓语言之语言——元语言&lt;/p&gt;
 &lt;p&gt;所谓认知之认知——元认知&lt;/p&gt;
 &lt;p&gt;所谓程序之程序——元程序&lt;/p&gt;
 &lt;p&gt;今天来看一看字符串，&lt;/p&gt;
 &lt;p&gt;字符串之字符串——&lt;del&gt;元字符串&lt;/del&gt;，其实是&lt;strong&gt;正则表达式&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;
-        
       
     
     </summary>
@@ -117,16 +113,15 @@
     <published>2018-07-13T12:05:04.000Z</published>
     <updated>2019-04-05T13:06:43.205Z</updated>
     
+    <content type="html"><![CDATA[<p>拿到的数据统计文件常常是Excel，要想在shell里用强大的Linux命令处理，需要先对文件进行转换。</p><p>两种方式：将Excel文件另存为.csv或.txt文件。其中又各有不同的数据格式：</p><p><img src="http://7xswue.com1.z0.glb.clouddn.com/18-7-12/25996091.jpg" alt></p><p>经尝试，选择导出文件类型为：UTF-16Unicode Text(.txt)格式。</p><p>接下来，还需要对文件进行编码转换：</p><p><code>iconv -f UTF-16 -t UTF-8 src.txt &gt; srcutf8.txt</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> iconv --<span class="built_in">help</span></span></span><br><span class="line">Usage: iconv [OPTION...] [-f ENCODING] [-t ENCODING] [INPUTFILE...]</span><br><span class="line">or:    iconv -l</span><br><span class="line"></span><br><span class="line">Converts text from one encoding to another encoding.</span><br><span class="line"></span><br><span class="line">Options controlling the input and output format:</span><br><span class="line">  -f ENCODING, --from-code=ENCODING</span><br><span class="line">                              the encoding of the input</span><br><span class="line">  -t ENCODING, --to-code=ENCODING</span><br><span class="line">                              the encoding of the output</span><br></pre></td></tr></table></figure><p>转换后的文件中可能还有^M，那是Windows环境下的回车造成的，也要替换：</p><p>替换方式见：<a href="http://blog.51cto.com/mrcelite/745576" target="_blank" rel="noopener">http://blog.51cto.com/mrcelite/745576</a></p><p>（^M使用 ctrl+v ctrl+shift+M 输入）</p><p>好了，终于可以用shell正常处理了。</p>]]></content>
+    
     <summary type="html">
     
       
       
-        
-        
-          &lt;p&gt;拿到的数据统计文件常常是Excel，要想在shell里用强大的Linux命令处理，需要先对文件进行转换。&lt;/p&gt;
+        &lt;p&gt;拿到的数据统计文件常常是Excel，要想在shell里用强大的Linux命令处理，需要先对文件进行转换。&lt;/p&gt;
 &lt;p&gt;两种方式：将Excel文件另存为.csv或.txt文件。其中又各有不同的数据格式：&lt;/p&gt;
-&lt;p&gt;&lt;img
-        
+&lt;p&gt;&lt;img src=&quot;http://7xswue.com1
       
     
     </summary>
@@ -141,14 +136,13 @@
     <published>2018-07-11T05:04:03.000Z</published>
     <updated>2019-04-05T13:06:43.201Z</updated>
     
+    <content type="html"><![CDATA[<h2 id="PHP脚本基础"><a href="#PHP脚本基础" class="headerlink" title="PHP脚本基础"></a>PHP脚本基础</h2><p>PHP作为一种解释型脚本语言，在处理一些简单任务时非常便利。sublime下写好处理流程，终端里直接执行就可以看到结果。</p><p>比如以下一些简单的任务模块</p><h3 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h3><p>最常用命令：</p><p><code>fopen(filename, mode)</code></p><p>mode 为r（读）、w（写）等</p><p>fopen 要和 fclose 一同使用</p><p>打开文件后进行读取，分三种：</p><p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p><ul><li>fread() 直接读</li><li>fgets() 按行读</li><li><h1 id="fgetc-按字符读"><a href="#fgetc-按字符读" class="headerlink" title="fgetc() 按字符读"></a>fgetc() 按字符读</h1></li></ul><ul><li>fread() 直接读</li><li>fgets() 按行读</li><li>fgetc() 按字符读<blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><p>a2f194de9eeba9f56e804d762a6cdf15c9221dfd</p></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></li></ul><p>另外，feof() 函数检查是否到达文件尾，用于遍历。</p><p>例子：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$cities = fopen(<span class="string">"result1.txt"</span>, <span class="string">"r"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open"</span>);</span><br><span class="line"></span><br><span class="line">$location = <span class="keyword">array</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (!feof($cities)) &#123;</span><br><span class="line"></span><br><span class="line">  $location[] = fgets($cities);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">array_pop($location);</span><br><span class="line"></span><br><span class="line">fclose($cities);</span><br></pre></td></tr></table></figure><p>这里有一个坑，按行读取的字符串存在数组中，每个字符串都包含一个换行符，需要去掉。用替换的方式将 ‘\n’ 换成 ‘’：</p><p>  <code>$location=str_replace(&quot;\n&quot;,&quot;&quot;,$location);</code></p><h3 id="使用curl"><a href="#使用curl" class="headerlink" title="使用curl"></a>使用curl</h3><p>curl（Client URL Library）简洁好用，在命令行里可以和服务器各种交互，怎样使用PHP调用curl呢？</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    <span class="comment">// create curl resource </span></span><br><span class="line">   $ch = curl_init(); </span><br><span class="line"></span><br><span class="line">   <span class="comment">// set url </span></span><br><span class="line">   curl_setopt($ch, CURLOPT_URL, <span class="string">"baidu.com"</span>); </span><br><span class="line"></span><br><span class="line">   <span class="comment">//return the transfer as a string </span></span><br><span class="line">   curl_setopt($ch, CURLOPT_RETURNTRANSFER, <span class="number">1</span>); </span><br><span class="line"></span><br><span class="line">   <span class="comment">// $output contains the output string </span></span><br><span class="line">   $output = curl_exec($ch); </span><br><span class="line"></span><br><span class="line">    <span class="comment">//echo output</span></span><br><span class="line">    <span class="keyword">echo</span> $output;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// close curl resource to free up system resources </span></span><br><span class="line">   curl_close($ch);      </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h3 id="引用其他文件"><a href="#引用其他文件" class="headerlink" title="引用其他文件"></a>引用其他文件</h3><p>很多情况下，需要调用其他PHP文件里的类和函数，有两种方式引用：require 和 include。唯一的区别是，引用出错时require会报error，include只会报warning。</p><p><code>require_once &#39;file&#39;;</code></p><p>文件可以是当前路径下的文件名，可以是绝对路径，可以是相对路径。相对路径的写法：</p><p><code>include_once __FILE__.&#39;../../dir/file&#39;;</code></p><h1 id="lt-lt-lt-lt-lt-lt-lt-HEAD"><a href="#lt-lt-lt-lt-lt-lt-lt-HEAD" class="headerlink" title="&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD"></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><p>a2f194de9eeba9f56e804d762a6cdf15c9221dfd</p></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote>]]></content>
+    
     <summary type="html">
     
       
       
-        
-        
-          &lt;h2 id=&quot;PHP脚本基础&quot;&gt;&lt;a href=&quot;#PHP脚本基础&quot; class=&quot;headerlink&quot;
-        
+        &lt;h2 id=&quot;PHP脚本基础&quot;&gt;&lt;a href=&quot;#PHP脚本基础&quot; class=&quot;headerlink&quot; title=&quot;PHP脚本基础&quot;&gt;&lt;/a&gt;PHP脚本基础&lt;/h2&gt;&lt;p&gt;PHP作为一种解释型脚本语言，在处理一些简单任务时非常便利。sublime下写好处理流程，终端里直接
       
     
     </summary>
@@ -163,15 +157,14 @@
     <published>2018-07-09T06:24:30.000Z</published>
     <updated>2019-04-05T13:06:43.204Z</updated>
     
+    <content type="html"><![CDATA[<p>阅读 Redis 源码时遇到很多地方使用 const 关键字，只知道这个修饰符用来定义常量，不明白详细用法，遂做总结。</p><h3 id="const的作用"><a href="#const的作用" class="headerlink" title="const的作用"></a>const的作用</h3><p>大多数语言中 const都是一个关键字，用来定义常量，当一个变量被const修饰时，它的值就不能再被改变。</p><p>在 C 语言中，#define（预编译命令）也有这个作用。相比于 #define，const最大的用处是：可以保护被修饰的变量，防止意外修改，增强程序的健壮性。</p><h3 id="const的用法"><a href="#const的用法" class="headerlink" title="const的用法"></a>const的用法</h3><h4 id="修饰局部变量"><a href="#修饰局部变量" class="headerlink" title="修饰局部变量"></a>修饰局部变量</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> n=<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> m=<span class="number">6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* str=<span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure><p>const修饰变量时，要给变量进行初始化，否则之后不能进行赋值。</p><p>经const修饰的变量，一旦被意外修改，在编译阶段就会被检查出来，避免了程序运行时异常终止的状况。</p><h4 id="修饰指针"><a href="#修饰指针" class="headerlink" title="修饰指针"></a>修饰指针</h4><p>常量指针：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> a=<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* n=&amp;a;</span><br><span class="line">*n = <span class="number">8</span>; <span class="comment">//error:read-only variable is not assignable</span></span><br><span class="line">        a = <span class="number">7</span>;  <span class="comment">//*n=7</span></span><br><span class="line">n=&amp;b;  <span class="comment">//*n=6</span></span><br><span class="line"><span class="keyword">return</span> *n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>常量指针指向的值不能改变，但指针可以指向其他地址，也可以用其他引用来改变变量的值。</p><p>指针常量：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> a=<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>* n=&amp;a;</span><br><span class="line">*n = <span class="number">8</span>; <span class="comment">//*n=8</span></span><br><span class="line">        a = <span class="number">7</span>;  <span class="comment">//*n=7</span></span><br><span class="line">        <span class="keyword">int</span> *p=&amp;a;</span><br><span class="line">        *p = <span class="number">9</span>; <span class="comment">//*n=9</span></span><br><span class="line">n=&amp;b;  <span class="comment">//error</span></span><br><span class="line"><span class="keyword">return</span> *n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>指针常量指向的地址不能改变，地址中保存的数值可以改变，也可以通过其他指向该地址的指针修改。</p><h4 id="修饰函数参数"><a href="#修饰函数参数" class="headerlink" title="修饰函数参数"></a>修饰函数参数</h4><p>函数参数中注意是指针常量还是常量指针，也有情况是两者结合，则指针和指向的值都不可改变，但很少见。</p><h4 id="修饰全局变量"><a href="#修饰全局变量" class="headerlink" title="修饰全局变量"></a>修饰全局变量</h4><p>尽量少用全局变量，如果用，尽量多用const修饰。</p>]]></content>
+    
     <summary type="html">
     
       
       
-        
-        
-          &lt;p&gt;阅读 Redis 源码时遇到很多地方使用 const 关键字，只知道这个修饰符用来定义常量，不明白详细用法，遂做总结。&lt;/p&gt;
-&lt;h3 id=&quot;const的作用&quot;&gt;&lt;a href=&quot;#const的作用&quot; class=&quot;headerlink&quot;
-        
+        &lt;p&gt;阅读 Redis 源码时遇到很多地方使用 const 关键字，只知道这个修饰符用来定义常量，不明白详细用法，遂做总结。&lt;/p&gt;
+&lt;h3 id=&quot;const的作用&quot;&gt;&lt;a href=&quot;#const的作用&quot; class=&quot;headerlink&quot; title=&quot;const的作用&quot;
       
     
     </summary>
@@ -186,14 +179,13 @@
     <published>2018-07-05T11:14:03.000Z</published>
     <updated>2019-04-05T13:06:43.204Z</updated>
     
+    <content type="html"><![CDATA[<h2 id="Mac与服务器传文件"><a href="#Mac与服务器传文件" class="headerlink" title="Mac与服务器传文件"></a>Mac与服务器传文件</h2><p>存在堡垒机（跳板机）时，scp命令失效。传小文件最好用的方法是 rz、sz。</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>使用 homebrew 安装：</p><p><code>brew install lrzsz</code></p><p>如果没有装 homebrew，先安装这个mac下神级的包管理工具：</p><p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>定义两个脚本文件控制文件传输</p><p><code>cd /usr/local/bin</code></p><p>iterm2-send-zmodem.sh</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># iterm2-recv-zmodem.sh</span></span><br><span class="line"></span><br><span class="line">FILE=`osascript -e <span class="string">'tell application "iTerm" to activate'</span> -e <span class="string">'tell application "iTerm" to set thefile to choose folder with prompt "Choose a folder to place received files in"'</span> -e <span class="string">"do shell script (\"echo \"&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\"\")"</span>`</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$FILE</span> = <span class="string">""</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> Cancelled.</span><br><span class="line">    <span class="comment"># Send ZModem cancel</span></span><br><span class="line">    <span class="built_in">echo</span> -e \\x18\\x18\\x18\\x18\\x18</span><br><span class="line">    <span class="built_in">echo</span> \<span class="comment"># Cancelled transfer</span></span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$FILE</span></span><br><span class="line">    <span class="built_in">cd</span> <span class="string">"<span class="variable">$FILE</span>"</span></span><br><span class="line">    /usr/<span class="built_in">local</span>/bin/rz </span><br><span class="line">    <span class="built_in">echo</span> \<span class="comment"># Received $FILE</span></span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure><p>iterm2-recv-zmodem.sh</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># iterm2-send-zmodem.sh</span></span><br><span class="line"></span><br><span class="line">FILE=`osascript -e <span class="string">'tell application "iTerm" to activate'</span> -e <span class="string">'tell application "iTerm" to set thefile to choose file with prompt "Choose a file to send"'</span> -e <span class="string">"do shell script (\"echo \"&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\"\")"</span>`</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$FILE</span> = <span class="string">""</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> Cancelled.</span><br><span class="line">    <span class="comment"># Send ZModem cancel</span></span><br><span class="line">    <span class="built_in">echo</span> -e \\x18\\x18\\x18\\x18\\x18</span><br><span class="line">    <span class="built_in">echo</span> \<span class="comment"># Cancelled transfer</span></span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$FILE</span></span><br><span class="line">    /usr/<span class="built_in">local</span>/bin/sz <span class="string">"<span class="variable">$FILE</span>"</span></span><br><span class="line">    <span class="built_in">echo</span> \<span class="comment"># Received $FILE</span></span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure><p>向iterm中添加triggers，使得在终端中传文件时顺利跳转，防止卡死。</p><p>iterm2 =&gt; Preferences =&gt; Profiles =&gt; Advanced =&gt; Triggers =&gt; Edit</p><p>添加两条规则：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Regular expression: rz waiting to receive.\*\*B0100</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/<span class="built_in">local</span>/bin/iterm2-send-zmodem.sh</span><br><span class="line"></span><br><span class="line">Regular expression: \*\*B00000000000000</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/<span class="built_in">local</span>/bin/iterm2-recv-zmodem.sh</span><br></pre></td></tr></table></figure><p>OK！</p>]]></content>
+    
     <summary type="html">
     
       
       
-        
-        
-          &lt;h2 id=&quot;Mac与服务器传文件&quot;&gt;&lt;a href=&quot;#Mac与服务器传文件&quot; class=&quot;headerlink&quot; title=&quot;Mac与服务器传文件&quot;&gt;&lt;/a&gt;Mac与服务器传文件&lt;/h2&gt;&lt;p&gt;存在堡垒机（跳板机）时，scp命令失效。传小文件最好用的方法是
-        
+        &lt;h2 id=&quot;Mac与服务器传文件&quot;&gt;&lt;a href=&quot;#Mac与服务器传文件&quot; class=&quot;headerlink&quot; title=&quot;Mac与服务器传文件&quot;&gt;&lt;/a&gt;Mac与服务器传文件&lt;/h2&gt;&lt;p&gt;存在堡垒机（跳板机）时，scp命令失效。传小文件最好用的方法是 rz、sz。
       
     
     </summary>
@@ -208,15 +200,14 @@
     <published>2018-07-04T13:04:01.000Z</published>
     <updated>2019-04-05T13:06:43.204Z</updated>
     
+    <content type="html"><![CDATA[<p>Charles是一个web调试代理工具，可以高效查看web访问的HTTP流量，尤其适用于移动端访问数据的抓取。</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>官网安装Charles</p><p>github上有 <a href="https://github.com/8enet/Charles-Crack" target="_blank" rel="noopener">crack地址</a></p><p>替换jar文件即可</p><h3 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h3><ul><li>mac与手机处于同一局域网</li><li>手机连接WiFi设置手动代理：mac端ip，端口8888</li><li>Charles allow手机代理访问</li></ul><p>注意：</p><ul><li>浏览器要关闭代理</li><li>可能需要安装Charles证书</li><li>可能需要关闭防火墙</li><li>检查端口8888是否被占用</li></ul><h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><ul><li><p>可选菜单有开始、停止、清除、重复、验证等</p></li><li><p>两种模式查看数据：structure、sequence</p></li><li>数据contents查看详细内容</li><li>单条请求右键有可选项</li><li>……</li></ul>]]></content>
+    
     <summary type="html">
     
       
       
-        
-        
-          &lt;p&gt;Charles是一个web调试代理工具，可以高效查看web访问的HTTP流量，尤其适用于移动端访问数据的抓取。&lt;/p&gt;
-&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot;
-        
+        &lt;p&gt;Charles是一个web调试代理工具，可以高效查看web访问的HTTP流量，尤其适用于移动端访问数据的抓取。&lt;/p&gt;
+&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;官网安装Cha
       
     
     </summary>
@@ -231,248 +222,16 @@
     <published>2018-05-13T15:11:14.000Z</published>
     <updated>2019-04-05T13:06:43.199Z</updated>
     
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;博客更换了新的域名
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Student Deverloper Pack</title>
-    <link href="http://yoursite.com/student-deverloper-pack/"/>
-    <id>http://yoursite.com/student-deverloper-pack/</id>
-    <published>2018-04-13T03:12:46.000Z</published>
-    <updated>2019-04-05T13:06:43.203Z</updated>
+    <content type="html"><![CDATA[<p>博客更换了新的域名 lizhongwei.me</p><p>将可以被搜索引擎检索到</p><p>不只作为一个自留地，未来输出更多有用文章</p>]]></content>
     
     <summary type="html">
     
       
       
-        
-        
-          &lt;p&gt;近来开始多多使用 github（我的 github：zhongweili），在考虑要不要开通付费版，就可以创建私有仓库了，恰好学长推荐了 github 学生账号，原来学生账号竟有无限量私有仓库数，果断申请开通。&lt;/p&gt;
-&lt;h3 id=&quot;必备条件&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JWT Tutorial</title>
-    <link href="http://yoursite.com/JWT-Tutorial/"/>
-    <id>http://yoursite.com/JWT-Tutorial/</id>
-    <published>2018-01-28T02:00:27.000Z</published>
-    <updated>2019-04-05T13:06:43.182Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;为什么使用-JWT&quot;&gt;&lt;a href=&quot;#为什么使用-JWT&quot; class=&quot;headerlink&quot; title=&quot;为什么使用 JWT&quot;&gt;&lt;/a&gt;为什么使用 JWT&lt;/h3&gt;&lt;p&gt;JWT 是为了代替基于 session 的认证机制，使用 session
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>我悠悠醒转</title>
-    <link href="http://yoursite.com/xiao-zhuan/"/>
-    <id>http://yoursite.com/xiao-zhuan/</id>
-    <published>2017-12-31T15:30:43.000Z</published>
-    <updated>2019-04-05T13:06:43.206Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>HTTPS 由来</title>
-    <link href="http://yoursite.com/HTTPS/"/>
-    <id>http://yoursite.com/HTTPS/</id>
-    <published>2017-11-19T01:48:52.000Z</published>
-    <updated>2019-04-05T13:06:43.182Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;网络世界纷繁复杂，绝大部分信息传输都仰仗 HTTP 协议。每次访问一个网页，就像是在外卖 App 上下单，商户将食物打包，再由外卖小哥接单送达用户，数不胜数的订单同时进去，这背后早有 HTTP 协议支持，不会送错。&lt;/p&gt;
-&lt;p&gt;HTTP
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Go 语言中的接口</title>
-    <link href="http://yoursite.com/go-interface/"/>
-    <id>http://yoursite.com/go-interface/</id>
-    <published>2017-11-18T15:36:48.000Z</published>
-    <updated>2019-04-05T13:06:43.197Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Go 语言中设计最精妙的部分是 interface。&lt;/p&gt;
-&lt;p&gt;有人甚至将 interface 翻译为“界面”而非“接口”，可见 Go 语言中的接口独树一帜，与 C++ 颇不一样。&lt;/p&gt;
-&lt;h3 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Go 语言中的面向对象</title>
-    <link href="http://yoursite.com/go-object/"/>
-    <id>http://yoursite.com/go-object/</id>
-    <published>2017-11-15T04:13:12.000Z</published>
-    <updated>2019-04-05T13:06:43.197Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;一切皆是对象。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这在 Java 这种强面向对象语言中是一条铁律。然而什么是对象，为什么一切都是对象？初学者很难理解。&lt;/p&gt;
-&lt;p&gt;在 Java、C++
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Go 语言的包管理</title>
-    <link href="http://yoursite.com/go-package/"/>
-    <id>http://yoursite.com/go-package/</id>
-    <published>2017-11-13T15:56:29.000Z</published>
-    <updated>2019-04-05T13:06:43.197Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;GOPATH&quot;&gt;&lt;a href=&quot;#GOPATH&quot; class=&quot;headerlink&quot; title=&quot;GOPATH&quot;&gt;&lt;/a&gt;GOPATH&lt;/h3&gt;&lt;p&gt;安装 Go 时配置环境变量除了 GOROOT 还有一个 GOPATH，GOROOT 是 go
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>种一棵树</title>
-    <link href="http://yoursite.com/build-a-tree/"/>
-    <id>http://yoursite.com/build-a-tree/</id>
-    <published>2017-11-01T11:14:56.000Z</published>
-    <updated>2019-04-05T13:06:43.194Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;种一棵树，最好的时间是十年前，其次是现在。学编程亦如此。&lt;/p&gt;
-&lt;p&gt;我决定新学一门编程语言，一方面从零学起可以补漏一些计算机基础知识，另一方面为以后的工作储备，多一点发展方向。&lt;/p&gt;
-&lt;p&gt;为什么选择学习Go？左耳朵耗子的&lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>项目开发中的反常识思考</title>
-    <link href="http://yoursite.com/thinking-in-projects/"/>
-    <id>http://yoursite.com/thinking-in-projects/</id>
-    <published>2017-10-26T13:29:32.000Z</published>
-    <updated>2019-04-05T13:06:43.203Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;这学期集中精力做一个网站开发的横向项目，自知没有专业团队的水准，很多地方也不符合业内规范标准的方法，不过在这个过程中不断摸索着，具体的开发方法、处理问题的思路、团队成员的合作、进度的把握等等各方面都有所接触，总是有些体会的。趁着项目暂停的机会，做一些反思总结。&lt;/p&gt;
-&lt;p
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>存储方案设计</title>
-    <link href="http://yoursite.com/storage-design/"/>
-    <id>http://yoursite.com/storage-design/</id>
-    <published>2017-08-02T15:50:16.000Z</published>
-    <updated>2019-04-05T13:06:43.202Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;资源预估&quot;&gt;&lt;a href=&quot;#资源预估&quot; class=&quot;headerlink&quot; title=&quot;资源预估&quot;&gt;&lt;/a&gt;资源预估&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;存储数据库，MySQL 建几张表?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;是否需要缓存，Redis or
-        
+        &lt;p&gt;博客更换了新的域名 lizhongwei.me&lt;/p&gt;
+&lt;p&gt;将可以被搜索引擎检索到&lt;/p&gt;
+&lt;p&gt;不只作为一个自留地，未来输出更多有用文章&lt;/p&gt;
+
       
     
     </summary>
