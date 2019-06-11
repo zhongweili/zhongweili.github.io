@@ -1,0 +1,665 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Jiwzdvse31x2sq3SDlXaAmbUedHiGWiDHQf73GTVCzg">
+
+
+
+
+  <meta name="baidu-site-verification" content="mxzMEaR2p3">
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="ffmpeg, gpu, nvidia,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Zhongwei's blog" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Official Website：https://ffmpeg.org/ FFmpeg是啥FFmpeg：a complete, cross-platform solution to record, convert and stream audio and video. wiki：https://zh.wikipedia.org/wiki/FFmpeg 一个可以运行音频和视频多种格式的录影、转换、流">
+<meta name="keywords" content="ffmpeg, gpu, nvidia">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ffmpeg小记">
+<meta property="og:url" content="http://yoursite.com/ffmpeg小记/index.html">
+<meta property="og:site_name" content="Zhongwei&#39;s blog">
+<meta property="og:description" content="Official Website：https://ffmpeg.org/ FFmpeg是啥FFmpeg：a complete, cross-platform solution to record, convert and stream audio and video. wiki：https://zh.wikipedia.org/wiki/FFmpeg 一个可以运行音频和视频多种格式的录影、转换、流">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-11T06:39:53.334Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ffmpeg小记">
+<meta name="twitter:description" content="Official Website：https://ffmpeg.org/ FFmpeg是啥FFmpeg：a complete, cross-platform solution to record, convert and stream audio and video. wiki：https://zh.wikipedia.org/wiki/FFmpeg 一个可以运行音频和视频多种格式的录影、转换、流">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> ffmpeg小记 | Zhongwei's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efa31440ffb097665a64e329b192d121";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=55772266";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhongwei's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Notes and Random Thoughts</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ffmpeg小记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2019-06-11T14:38:29+08:00" content="2019-06-11">
+              2019-06-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Official Website：<a href="https://ffmpeg.org/" target="_blank" rel="noopener">https://ffmpeg.org/</a></p>
+<h2 id="FFmpeg是啥"><a href="#FFmpeg是啥" class="headerlink" title="FFmpeg是啥"></a>FFmpeg是啥</h2><p>FFmpeg：a complete, cross-platform solution to record, convert and stream audio and video.</p>
+<p>wiki：<a href="https://zh.wikipedia.org/wiki/FFmpeg" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/FFmpeg</a></p>
+<p>一个可以运行音频和视频多种格式的录影、转换、流功能的自由软件</p>
+<h2 id="FFmpeg转码"><a href="#FFmpeg转码" class="headerlink" title="FFmpeg转码"></a>FFmpeg转码</h2><p>可以使用CPU/GPU两种方式进行视频编码，分别称为软编码和硬编码</p>
+<p>软编码和硬编码如何区分</p>
+<p>​    软编码：使用CPU进行编码</p>
+<p>​    硬编码：使用非CPU进行编码，如显卡GPU、专用的DSP、FPGA、ASIC芯片等</p>
+<p>软编码和硬编码比较</p>
+<p>​       软编码：实现直接、简单，参数调整方便，升级易，但CPU负载重，性能较硬编码低，低码率下质量通常比硬编码要好一点。</p>
+<p>​       硬编码：性能高，低码率下通常质量低于软编码器，但部分产品在GPU硬件平台移植了优秀的软编码算法（如X264）的，质量基本等同于软编码。</p>
+<p>本文介绍GPU硬编码对视频转码的加速</p>
+<p>硬件加速（HWAccel）是什么？有哪些GPU支持硬件加速？FFmpeg怎么做HWAccel？看FFmpeg官方文档：<a href="https://trac.ffmpeg.org/wiki/HWAccelIntro" target="_blank" rel="noopener">https://trac.ffmpeg.org/wiki/HWAccelIntro</a></p>
+<p>可见，目前使用较多的是NVIDIA的GPU，相关资料也比较丰富。看NVIDIA官方文档：<a href="https://developer.nvidia.com/FFmpeg" target="_blank" rel="noopener">https://developer.nvidia.com/FFmpeg</a></p>
+<p>（视频编码、解码和转码是 FFmpeg 的主要应用。 由于 FFmpeg 和 libav 社区的支持和 NVIDIA 工程师的贡献，这两个工具现在都支持通过集成 NVIDIA 视频编解码器 SDK 的硬件加速视频编码和解码。</p>
+<p>利用 FFmpeg 的音频编解码器、流切换和 RTP 协议，FFmpeg 与 NVIDIA 视频编解码器 SDK 的集成使得高性能硬件加速的视频管道成为可能。</p>
+<h2 id="FFmpeg硬件加速"><a href="#FFmpeg硬件加速" class="headerlink" title="FFmpeg硬件加速"></a>FFmpeg硬件加速</h2><h3 id="1-下载FFmpeg及依赖库"><a href="#1-下载FFmpeg及依赖库" class="headerlink" title="1. 下载FFmpeg及依赖库"></a>1. 下载FFmpeg及依赖库</h3><p>安装依赖工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; yum install autoconf automake bzip2 cmake freetype-devel gcc gcc-c++ git libtool make mercurial pkgconfig zlib-devel</span><br></pre></td></tr></table></figure>
+<p>ffmpeg官网下载 <a href="https://ffmpeg.org/download.html" target="_blank" rel="noopener">https://ffmpeg.org/download.html</a></p>
+<h3 id="2-下载安装NVIDIA驱动"><a href="#2-下载安装NVIDIA驱动" class="headerlink" title="2.下载安装NVIDIA驱动"></a>2.下载安装NVIDIA驱动</h3><p>到 <a href="https://www.nvidia.com/Download/index.aspx?lang=en-us" target="_blank" rel="noopener">https://www.nvidia.com/Download/index.aspx?lang=en-us</a> 选择相应驱动下载</p>
+<p>安装必要组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; yum install gcc kernel-devel kernel-headers</span><br></pre></td></tr></table></figure>
+<p>找到kernel source，执行安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ./NVIDIA-Linux-x86_64-418.67.run --kernel-source-path=/usr/src/kernels/3.10.0-862.el7.x86_64 -k $(uname -r)</span><br></pre></td></tr></table></figure>
+<p>(中间可能会出错，参考<a href="https://askubuntu.com/questions/149206/how-to-install-nvidia-run" target="_blank" rel="noopener">https://askubuntu.com/questions/149206/how-to-install-nvidia-run</a> 加上 –no-x-check 参数可解决)</p>
+<p>会先安装32位兼容库，然后安装驱动</p>
+<p>检查安装是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; nvidia-smi</span><br></pre></td></tr></table></figure>
+<h3 id="3-下载安装CUDA工具包"><a href="#3-下载安装CUDA工具包" class="headerlink" title="3.下载安装CUDA工具包"></a>3.下载安装CUDA工具包</h3><p>NVIDIA CUDA工具包为创建高性能GPU应用程序提供了开发环境 <a href="https://developer.nvidia.com/cuda-toolkit" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-toolkit</a></p>
+<p>官网下载CUDA：<a href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=CentOS&amp;target_version=7&amp;target_type=runfilelocal" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=CentOS&amp;target_version=7&amp;target_type=runfilelocal</a></p>
+<p>执行安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ./cuda_10.1.105_418.39_linux.run</span><br></pre></td></tr></table></figure>
+<p>出错，查看安装日志 /var/log/cuda-installer.log。 You appear to be running an X server</p>
+<p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; service lightdm stop</span><br><span class="line"></span><br><span class="line">&gt; init 3</span><br><span class="line"></span><br><span class="line">&gt; ps ax | grep X</span><br><span class="line"></span><br><span class="line">&gt; kill -9 &#123;X pid&#125;</span><br></pre></td></tr></table></figure>
+<p>再次安装，成功。除了CUDA toolkits，还装上了samples，可供验证</p>
+<p>配置环境变量  /etc/profile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/cuda-10.1/bin:$PATH</span><br><span class="line">export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; source /etc/profile</span><br></pre></td></tr></table></figure>
+<p>到samples目录，使用CUDA，例如对于deviceQuery例子，运行得到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.1, CUDA Runtime Version = 10.1, NumDevs = 1</span><br><span class="line">Result = PASS</span><br></pre></td></tr></table></figure>
+<h3 id="4-编译FFmpeg"><a href="#4-编译FFmpeg" class="headerlink" title="4.编译FFmpeg"></a>4.编译FFmpeg</h3><p> 先安装 NVIDIA headers</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; git clone https://[git.videolan.org/git](http://git.videolan.org/git)/ffmpeg/nv-codec-headers.git</span><br><span class="line"></span><br><span class="line">&gt; cd nv-codec-headers</span><br><span class="line"></span><br><span class="line">&gt; make</span><br><span class="line"></span><br><span class="line">&gt; sudo make install</span><br></pre></td></tr></table></figure>
+<p>接着编译FFmpeg</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure   --prefix=&quot;$HOME/ffmpeg_build&quot;   --pkg-config-flags=&quot;--static&quot;   --extra-cflags=&quot;-I$HOME/ffmpeg_build/include -I/usr/local/cuda/include&quot;   --extra-ldflags=&quot;-L$HOME/ffmpeg_build/lib -L/usr/local/cuda/lib64&quot;   --extra-libs=-lpthread   --extra-libs=-lm   --bindir=&quot;$HOME/bin&quot;   --enable-gpl   --enable-libfdk_aac    --enable-libmp3lame --enable-nonfree   --enable-cuda   --enable-cuvid   --enable-nvenc --enable-libnpp --enable-libx264</span><br></pre></td></tr></table></figure>
+<p>其中，libfdk_cc是ACC音频编码器，libmp3lame是MP3音频编码器，libx264是H.264视频编码器，这三项对x264编码视频是必须的。</p>
+<p>cuda, cuvid, nvenc 是GPU加速相关的，必备。</p>
+<p>gpl， libnpp未知，但也需要编译进去，否则转码带分辨率参数时会报错。</p>
+<p>另外，nasm 和  yasm 两个汇编编译器需要提前安装，编译某些依赖库时会需要用到。</p>
+<h3 id="5-FFmpeg相关使用"><a href="#5-FFmpeg相关使用" class="headerlink" title="5.FFmpeg相关使用"></a>5.FFmpeg相关使用</h3><p>help</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -h</span><br></pre></td></tr></table></figure>
+<p>通过ffprobe命令识别并输出视频信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffprobe -v error -show_streams -print_format json &lt;input&gt;</span><br></pre></td></tr></table></figure>
+<p>查看是否支持编码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -h encoder=libx264</span><br></pre></td></tr></table></figure>
+<p>查看支持的硬件加速选项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -hwaccels</span><br></pre></td></tr></table></figure>
+<p>查看cuvid提供的GPU编解码器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -codecs | grep cuvid</span><br></pre></td></tr></table></figure>
+<p>转码一个单一的视频文件：</p>
+<p>不用GPU加速</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; time ffmpeg -i 001.mp4 -c:v libx264 -b:v 2048k -vf scale=1280:-1 -y 001_output.mp4</span><br></pre></td></tr></table></figure>
+<p>使用GPU加速</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; time ffmpeg -hwaccel cuvid -c:v h264_cuvid -i 001.mp4 -b:v 2048k -vf scale=1280:-1 -y -c:v h264_nvenc 002_output.mp4</span><br></pre></td></tr></table></figure>
+<ul>
+<li>-c:v：指定编码器，编码器列表可以使用ffmpeg -codecs查看</li>
+<li>-vf scale：指定输出视频的宽高，高-1代表按照比例自动适应</li>
+<li>-b:v：指定输出视频的码率，即输出视频每秒的bit数</li>
+<li>-hwaccel cuvid：指定使用cuvid硬件加速</li>
+<li>-c:v h264_cuvid：使用h264_cuvid进行视频解码</li>
+<li>-c:v h264_nvenc：使用h264_nvenc进行视频编码</li>
+<li>-vf scale_npp=1280:-1：指定输出视频的宽高，注意，这里和软解码时使用的-vf scale=x:x不一样</li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ffmpeg-gpu-nvidia/" rel="tag">#ffmpeg, gpu, nvidia</a>
+          
+        </div>
+      
+
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/allacronyms/" rel="next" title="互联网常用数据指标">
+                <i class="fa fa-chevron-left"></i> 互联网常用数据指标
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Zhongwei">
+          <p class="site-author-name" itemprop="name">Zhongwei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">85</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FFmpeg是啥"><span class="nav-number">1.</span> <span class="nav-text">FFmpeg是啥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFmpeg转码"><span class="nav-number">2.</span> <span class="nav-text">FFmpeg转码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFmpeg硬件加速"><span class="nav-number">3.</span> <span class="nav-text">FFmpeg硬件加速</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-下载FFmpeg及依赖库"><span class="nav-number">3.1.</span> <span class="nav-text">1. 下载FFmpeg及依赖库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-下载安装NVIDIA驱动"><span class="nav-number">3.2.</span> <span class="nav-text">2.下载安装NVIDIA驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-下载安装CUDA工具包"><span class="nav-number">3.3.</span> <span class="nav-text">3.下载安装CUDA工具包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-编译FFmpeg"><span class="nav-number">3.4.</span> <span class="nav-text">4.编译FFmpeg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-FFmpeg相关使用"><span class="nav-number">3.5.</span> <span class="nav-text">5.FFmpeg相关使用</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongwei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
+

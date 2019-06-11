@@ -262,6 +262,159 @@
             
               
                 
+                <a class="post-title-link" href="/Pregel+ Deployment/" itemprop="url">
+                  Pregel+ Deployment
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-26T23:29:29+08:00" content="2017-02-26">
+              2017-02-26
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="G-Installation"><a href="#G-Installation" class="headerlink" title="G++ Installation"></a>G++ Installation</h3><blockquote>
+<p>su -c “yum install gcc-c++”</p>
+</blockquote>
+<h3 id="MPI-Installation"><a href="#MPI-Installation" class="headerlink" title="MPI Installation"></a>MPI Installation</h3><blockquote>
+<p>tar xzf mpich-3.1.tar.gz</p>
+<p>cd mpich-3.1</p>
+</blockquote>
+<blockquote>
+<p>/configure -prefix=/usr/local/mpich (–disable-f77 –disable-fc)</p>
+<p>make</p>
+<p>su -c “make install” </p>
+</blockquote>
+<blockquote>
+<p>vim ~/.bashrc</p>
+</blockquote>
+<h4 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export MPICH_HOME=/usr/local/mpich</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:$MPICH_HOME/bin</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>source ~/.bashrc</p>
+</blockquote>
+<h3 id="JDK-Installation"><a href="#JDK-Installation" class="headerlink" title="JDK Installation"></a>JDK Installation</h3><blockquote>
+<p>rpm -ivh jdk-8u111-linux-x64.rpm </p>
+</blockquote>
+<blockquote>
+<p>vim ~/.bashrc</p>
+</blockquote>
+<h4 id="insert-1"><a href="#insert-1" class="headerlink" title="insert"></a>insert</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/usr/java/jdk1.8.0_111</span><br><span class="line">JRE_HOME=/usr/java/jdk1.8.0_111/jre</span><br><span class="line">PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</span><br><span class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib</span><br><span class="line">export JAVA_HOME JRE_HOME PATH CLASSPATH</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>source ~/.bashrc</p>
+</blockquote>
+<h3 id="SSH-Configuration"><a href="#SSH-Configuration" class="headerlink" title="SSH Configuration"></a>SSH Configuration</h3><h3 id="Hadoop-Deployment"><a href="#Hadoop-Deployment" class="headerlink" title="Hadoop Deployment"></a>Hadoop Deployment</h3><h4 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h4><blockquote>
+<p>tar xzf hadoop-2.7.3.tar.gz</p>
+<p>su -c “mv hadoop-2.7.3 /usr/local” </p>
+<p>su -c “chown 777 /usr/local/hadoop-2.7.3” </p>
+</blockquote>
+<blockquote>
+<p>vim ~/.bashrc</p>
+</blockquote>
+<h4 id="insert-2"><a href="#insert-2" class="headerlink" title="insert"></a>insert</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">export HADOOP_HOME=/usr/local/hadoop-2.7.3</span><br><span class="line">export HADOOP_MAPRED_HOME=$HADOOP_HOME</span><br><span class="line">export HADOOP_YARN_HOME=$HADOOP_HOME</span><br><span class="line">export PATH=$PATH:$HADOOP_HOME/bin</span><br><span class="line">export PATH=$PATH:$HADOOP_HOME/sbin</span><br><span class="line">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HADOOP_HOME/lib/native</span><br><span class="line">export CLASSPATH=$CLASSPATH:/usr/local/hadoop-2.7.3/etc/hadoop</span><br><span class="line"></span><br><span class="line">for i in $HADOOP_HOME/share/hadoop/common/lib/*.jar</span><br><span class="line"></span><br><span class="line">do</span><br><span class="line">   CLASSPATH=\$CLASSPATH:$i</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">for i in $HADOOP_HOME/share/hadoop/hdfs/lib/*.jar</span><br><span class="line"></span><br><span class="line">do</span><br><span class="line">   CLASSPATH=\$CLASSPATH:\$i</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">for i in $HADOOP_HOME/share/hadoop/common/*.jar</span><br><span class="line"></span><br><span class="line">do</span><br><span class="line">   CLASSPATH=\$CLASSPATH:$i</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">for i in $HADOOP_HOME/share/hadoop/hdfs/*.jar</span><br><span class="line"></span><br><span class="line">do</span><br><span class="line">   CLASSPATH=\$CLASSPATH:$i</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">export CLASSPATH</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>vim $HADOOP_HOME/etc/hadoop/hadoop-env.sh</p>
+</blockquote>
+<h4 id="insert-3"><a href="#insert-3" class="headerlink" title="insert"></a>insert</h4><p><code>export JAVA_HOME=/usr/java/jdk1.8.0_111</code></p>
+<blockquote>
+<p>vim  $HADOOP_HOME/etc/hadoop/core-site.xml</p>
+</blockquote>
+<h4 id="insert-4"><a href="#insert-4" class="headerlink" title="insert"></a>insert</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">    &lt;value&gt;/app/hdfs&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">&lt;property&gt;</span><br><span class="line"></span><br><span class="line">    &lt;name&gt;fs.default.name&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">    &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>vim $HADOOP_HOME/etc/hadoop/hdfs-site.xml</p>
+</blockquote>
+<h4 id="insert-5"><a href="#insert-5" class="headerlink" title="insert"></a>insert</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line"></span><br><span class="line">    &lt;property&gt;</span><br><span class="line"></span><br><span class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">        &lt;value&gt;1&lt;/value&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/property&gt;</span><br><span class="line"></span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="verify"><a href="#verify" class="headerlink" title="verify"></a>verify</h4><blockquote>
+<p>hadoop namenode -format</p>
+</blockquote>
+<blockquote>
+<p>$HADOOP_HOME/sbin/start-all.sh</p>
+</blockquote>
+<blockquote>
+<p>jps</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/the-society-for-young/" itemprop="url">
                   这个社会，对年轻人太好了吗
                 </a>
@@ -957,122 +1110,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/heavy-reality/" itemprop="url">
-                  现实往往太笨重
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-06T15:01:43+08:00" content="2017-02-06">
-              2017-02-06
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="http://7pum71.com1.z0.glb.clouddn.com/02-06.jpg" alt></p>
-<p>寒假回到家，离开了熟悉的大城市的环境，在这里接触到其他群体的人，看着另外的生活方式，噢，原来你关心的东西别人根本不了解，原来你在意的东西别人根本不care。</p>
-<p>譬如互联网的发展，一线城市的媒体和自媒体大肆宣传着，革命、颠覆、未来科技……可是对于另一大波人，不就是上网更便利了么。一个普通人不会去关心什么O2O、互联网+、去中心、人工智能……</p>
-<p>我们一直在说互联网改变了世界，但是要知道，这很大程度上改变的只是理想中的世界，现实往往太笨重，跟不上变化。很多明明看起来那么正确的事情似乎并不那么明显。</p>
-<h4 id="滴滴打车"><a href="#滴滴打车" class="headerlink" title="滴滴打车"></a>滴滴打车</h4><p>滴滴和Uber期望的愿景多么美好：汽车增多，交通拥堵，让共享经济的理念提高汽车的利用率，彻底改善交通。资本和市场对其亲睐有加，如今经过了滴滴、快滴、Uber的合并，终于跨过了过渡时期，要开始实现愿景了吧？可现实是，更多汽车上路了，因为可以顺路拉个人挣个油钱。</p>
-<p>更为可怕的是，打车市场格局的改变，又引入了新的弊端。招手打车已经越来越困难了，这对于一大部分不会或者不习惯使用打车软件的人造成了相当的麻烦，重要的是，这一大部分人可能大到超乎想象。</p>
-<p>当然了，滴滴打车是很好的东西，抛开共享经济一说，起码大大优化了信息流的配置。就像一项科学技术刚出现时很多人无法接收一样，滴滴打车无法兼顾到所有人的需求，不会使用新技术的人要付出代价。滴滴打车也要付出代价，互联网改变世界同样要付出代价。</p>
-<h4 id="外卖"><a href="#外卖" class="headerlink" title="外卖"></a>外卖</h4><p>对于餐饮行业，外卖的兴起自然也有代价，如果说还有一大部分人不会使用手机软件点外卖，其实那部分人对外卖也没有多大的需求。这里的代价可能应该是引起的一系列连锁反应。</p>
-<p>这其中至少包括，雨后春笋般涌现出来的一个个小饭店，填满大量工作岗位的奔波着的外卖小哥，”我去点个外卖”的主播和”我也点个外卖”的大批沉迷网络的观众……这些复杂的社会现象是好是坏？不清楚。</p>
-<p>技术公司又是怎么做的呢？人们调侃着说，Google在研制无人驾驶汽车，而同量级的百度在送外卖。百度的发言人则说，送外卖可是个技术活，我们利用大数据智能调配送外卖的顺序和路线，大大提高效率balabala。可见，技术公司可能还来不及过分关注社会现象。而在不同的群体中又有迥异的现象，直白地说，这个社会是分层的。</p>
-<h4 id="微信朋友圈"><a href="#微信朋友圈" class="headerlink" title="微信朋友圈"></a>微信朋友圈</h4><p>为什么社会是分层的？只要对比一下不同人的微信朋友圈就明白了。微信朋友圈成了人们了解外界的窗口，每个人都以为世界就是自己的朋友圈里的样子，滑稽的是每个人的朋友圈竟然各不相同，世界却只有一个。</p>
-<p>尤其是朋友圈中分享的文章。一个始终存在的问题是：谣言肆虐。简单来说，某一类谣言只在能顺利传播的那一层传播，那一层的人又深信不疑。</p>
-<p>微信作为中国互联网最成功和最有代表性的创新产品，甚至被广大外国公司赞誉和借鉴，其独创性的地方就包括朋友圈和订阅号这种去中心化的信息分发方式。一个月活超过8亿的超级APP，微信深深影响着中国互联网的走向。诚挚地赞美微信数不尽的优点，但也要明白其不可能完美。如果要问互联网上的谣言影响有多么广，可能身边最亲近的父母手机上就能反映出来。</p>
-<h4 id="互联网教育"><a href="#互联网教育" class="headerlink" title="互联网教育"></a>互联网教育</h4><p>看起来似乎是这样，不论是对新技术的掌握还是对谣言的判断，根本的问题也许在于对相当大比例人群的教育。于是很多人说，未来的发展要着眼于教育。</p>
-<p>互联网教育不就是做这个的吗？让任何人都可以接收高质量的在线教育。大名鼎鼎的可汗学院、Coursera、优达学城旨在免费为普通人提供优质课程，遗憾的是，需要接收教育的一大批人根本没听说过这几个名字。即使是国内网易云课堂办得有声有色，大部分的用户也是一些接收过高等教育的人群。</p>
-<hr>
-<p>这就是笨重的现实？</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1111,13 +1153,20 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
 
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>

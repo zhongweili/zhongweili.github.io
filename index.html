@@ -262,6 +262,173 @@
             
               
                 
+                <a class="post-title-link" href="/ffmpeg小记/" itemprop="url">
+                  ffmpeg小记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2019-06-11T14:38:29+08:00" content="2019-06-11">
+              2019-06-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Official Website：<a href="https://ffmpeg.org/" target="_blank" rel="noopener">https://ffmpeg.org/</a></p>
+<h2 id="FFmpeg是啥"><a href="#FFmpeg是啥" class="headerlink" title="FFmpeg是啥"></a>FFmpeg是啥</h2><p>FFmpeg：a complete, cross-platform solution to record, convert and stream audio and video.</p>
+<p>wiki：<a href="https://zh.wikipedia.org/wiki/FFmpeg" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/FFmpeg</a></p>
+<p>一个可以运行音频和视频多种格式的录影、转换、流功能的自由软件</p>
+<h2 id="FFmpeg转码"><a href="#FFmpeg转码" class="headerlink" title="FFmpeg转码"></a>FFmpeg转码</h2><p>可以使用CPU/GPU两种方式进行视频编码，分别称为软编码和硬编码</p>
+<p>软编码和硬编码如何区分</p>
+<p>​    软编码：使用CPU进行编码</p>
+<p>​    硬编码：使用非CPU进行编码，如显卡GPU、专用的DSP、FPGA、ASIC芯片等</p>
+<p>软编码和硬编码比较</p>
+<p>​       软编码：实现直接、简单，参数调整方便，升级易，但CPU负载重，性能较硬编码低，低码率下质量通常比硬编码要好一点。</p>
+<p>​       硬编码：性能高，低码率下通常质量低于软编码器，但部分产品在GPU硬件平台移植了优秀的软编码算法（如X264）的，质量基本等同于软编码。</p>
+<p>本文介绍GPU硬编码对视频转码的加速</p>
+<p>硬件加速（HWAccel）是什么？有哪些GPU支持硬件加速？FFmpeg怎么做HWAccel？看FFmpeg官方文档：<a href="https://trac.ffmpeg.org/wiki/HWAccelIntro" target="_blank" rel="noopener">https://trac.ffmpeg.org/wiki/HWAccelIntro</a></p>
+<p>可见，目前使用较多的是NVIDIA的GPU，相关资料也比较丰富。看NVIDIA官方文档：<a href="https://developer.nvidia.com/FFmpeg" target="_blank" rel="noopener">https://developer.nvidia.com/FFmpeg</a></p>
+<p>（视频编码、解码和转码是 FFmpeg 的主要应用。 由于 FFmpeg 和 libav 社区的支持和 NVIDIA 工程师的贡献，这两个工具现在都支持通过集成 NVIDIA 视频编解码器 SDK 的硬件加速视频编码和解码。</p>
+<p>利用 FFmpeg 的音频编解码器、流切换和 RTP 协议，FFmpeg 与 NVIDIA 视频编解码器 SDK 的集成使得高性能硬件加速的视频管道成为可能。</p>
+<h2 id="FFmpeg硬件加速"><a href="#FFmpeg硬件加速" class="headerlink" title="FFmpeg硬件加速"></a>FFmpeg硬件加速</h2><h3 id="1-下载FFmpeg及依赖库"><a href="#1-下载FFmpeg及依赖库" class="headerlink" title="1. 下载FFmpeg及依赖库"></a>1. 下载FFmpeg及依赖库</h3><p>安装依赖工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; yum install autoconf automake bzip2 cmake freetype-devel gcc gcc-c++ git libtool make mercurial pkgconfig zlib-devel</span><br></pre></td></tr></table></figure>
+<p>ffmpeg官网下载 <a href="https://ffmpeg.org/download.html" target="_blank" rel="noopener">https://ffmpeg.org/download.html</a></p>
+<h3 id="2-下载安装NVIDIA驱动"><a href="#2-下载安装NVIDIA驱动" class="headerlink" title="2.下载安装NVIDIA驱动"></a>2.下载安装NVIDIA驱动</h3><p>到 <a href="https://www.nvidia.com/Download/index.aspx?lang=en-us" target="_blank" rel="noopener">https://www.nvidia.com/Download/index.aspx?lang=en-us</a> 选择相应驱动下载</p>
+<p>安装必要组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; yum install gcc kernel-devel kernel-headers</span><br></pre></td></tr></table></figure>
+<p>找到kernel source，执行安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ./NVIDIA-Linux-x86_64-418.67.run --kernel-source-path=/usr/src/kernels/3.10.0-862.el7.x86_64 -k $(uname -r)</span><br></pre></td></tr></table></figure>
+<p>(中间可能会出错，参考<a href="https://askubuntu.com/questions/149206/how-to-install-nvidia-run" target="_blank" rel="noopener">https://askubuntu.com/questions/149206/how-to-install-nvidia-run</a> 加上 –no-x-check 参数可解决)</p>
+<p>会先安装32位兼容库，然后安装驱动</p>
+<p>检查安装是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; nvidia-smi</span><br></pre></td></tr></table></figure>
+<h3 id="3-下载安装CUDA工具包"><a href="#3-下载安装CUDA工具包" class="headerlink" title="3.下载安装CUDA工具包"></a>3.下载安装CUDA工具包</h3><p>NVIDIA CUDA工具包为创建高性能GPU应用程序提供了开发环境 <a href="https://developer.nvidia.com/cuda-toolkit" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-toolkit</a></p>
+<p>官网下载CUDA：<a href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=CentOS&amp;target_version=7&amp;target_type=runfilelocal" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=CentOS&amp;target_version=7&amp;target_type=runfilelocal</a></p>
+<p>执行安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ./cuda_10.1.105_418.39_linux.run</span><br></pre></td></tr></table></figure>
+<p>出错，查看安装日志 /var/log/cuda-installer.log。 You appear to be running an X server</p>
+<p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; service lightdm stop</span><br><span class="line"></span><br><span class="line">&gt; init 3</span><br><span class="line"></span><br><span class="line">&gt; ps ax | grep X</span><br><span class="line"></span><br><span class="line">&gt; kill -9 &#123;X pid&#125;</span><br></pre></td></tr></table></figure>
+<p>再次安装，成功。除了CUDA toolkits，还装上了samples，可供验证</p>
+<p>配置环境变量  /etc/profile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/cuda-10.1/bin:$PATH</span><br><span class="line">export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; source /etc/profile</span><br></pre></td></tr></table></figure>
+<p>到samples目录，使用CUDA，例如对于deviceQuery例子，运行得到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.1, CUDA Runtime Version = 10.1, NumDevs = 1</span><br><span class="line">Result = PASS</span><br></pre></td></tr></table></figure>
+<h3 id="4-编译FFmpeg"><a href="#4-编译FFmpeg" class="headerlink" title="4.编译FFmpeg"></a>4.编译FFmpeg</h3><p> 先安装 NVIDIA headers</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; git clone https://[git.videolan.org/git](http://git.videolan.org/git)/ffmpeg/nv-codec-headers.git</span><br><span class="line"></span><br><span class="line">&gt; cd nv-codec-headers</span><br><span class="line"></span><br><span class="line">&gt; make</span><br><span class="line"></span><br><span class="line">&gt; sudo make install</span><br></pre></td></tr></table></figure>
+<p>接着编译FFmpeg</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure   --prefix=&quot;$HOME/ffmpeg_build&quot;   --pkg-config-flags=&quot;--static&quot;   --extra-cflags=&quot;-I$HOME/ffmpeg_build/include -I/usr/local/cuda/include&quot;   --extra-ldflags=&quot;-L$HOME/ffmpeg_build/lib -L/usr/local/cuda/lib64&quot;   --extra-libs=-lpthread   --extra-libs=-lm   --bindir=&quot;$HOME/bin&quot;   --enable-gpl   --enable-libfdk_aac    --enable-libmp3lame --enable-nonfree   --enable-cuda   --enable-cuvid   --enable-nvenc --enable-libnpp --enable-libx264</span><br></pre></td></tr></table></figure>
+<p>其中，libfdk_cc是ACC音频编码器，libmp3lame是MP3音频编码器，libx264是H.264视频编码器，这三项对x264编码视频是必须的。</p>
+<p>cuda, cuvid, nvenc 是GPU加速相关的，必备。</p>
+<p>gpl， libnpp未知，但也需要编译进去，否则转码带分辨率参数时会报错。</p>
+<p>另外，nasm 和  yasm 两个汇编编译器需要提前安装，编译某些依赖库时会需要用到。</p>
+<h3 id="5-FFmpeg相关使用"><a href="#5-FFmpeg相关使用" class="headerlink" title="5.FFmpeg相关使用"></a>5.FFmpeg相关使用</h3><p>help</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -h</span><br></pre></td></tr></table></figure>
+<p>通过ffprobe命令识别并输出视频信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffprobe -v error -show_streams -print_format json &lt;input&gt;</span><br></pre></td></tr></table></figure>
+<p>查看是否支持编码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -h encoder=libx264</span><br></pre></td></tr></table></figure>
+<p>查看支持的硬件加速选项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -hwaccels</span><br></pre></td></tr></table></figure>
+<p>查看cuvid提供的GPU编解码器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -codecs | grep cuvid</span><br></pre></td></tr></table></figure>
+<p>转码一个单一的视频文件：</p>
+<p>不用GPU加速</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; time ffmpeg -i 001.mp4 -c:v libx264 -b:v 2048k -vf scale=1280:-1 -y 001_output.mp4</span><br></pre></td></tr></table></figure>
+<p>使用GPU加速</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; time ffmpeg -hwaccel cuvid -c:v h264_cuvid -i 001.mp4 -b:v 2048k -vf scale=1280:-1 -y -c:v h264_nvenc 002_output.mp4</span><br></pre></td></tr></table></figure>
+<ul>
+<li>-c:v：指定编码器，编码器列表可以使用ffmpeg -codecs查看</li>
+<li>-vf scale：指定输出视频的宽高，高-1代表按照比例自动适应</li>
+<li>-b:v：指定输出视频的码率，即输出视频每秒的bit数</li>
+<li>-hwaccel cuvid：指定使用cuvid硬件加速</li>
+<li>-c:v h264_cuvid：使用h264_cuvid进行视频解码</li>
+<li>-c:v h264_nvenc：使用h264_nvenc进行视频编码</li>
+<li>-vf scale_npp=1280:-1：指定输出视频的宽高，注意，这里和软解码时使用的-vf scale=x:x不一样</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/allacronyms/" itemprop="url">
                   互联网常用数据指标
                 </a>
@@ -832,164 +999,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/php-script-basic/" itemprop="url">
-                  PHP脚本基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-07-11T13:04:03+08:00" content="2018-07-11">
-              2018-07-11
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="PHP脚本基础"><a href="#PHP脚本基础" class="headerlink" title="PHP脚本基础"></a>PHP脚本基础</h2><p>PHP作为一种解释型脚本语言，在处理一些简单任务时非常便利。sublime下写好处理流程，终端里直接执行就可以看到结果。</p>
-<p>比如以下一些简单的任务模块</p>
-<h3 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h3><p>最常用命令：</p>
-<p><code>fopen(filename, mode)</code></p>
-<p>mode 为r（读）、w（写）等</p>
-<p>fopen 要和 fclose 一同使用</p>
-<p>打开文件后进行读取，分三种：</p>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-<ul>
-<li>fread() 直接读</li>
-<li>fgets() 按行读</li>
-<li><h1 id="fgetc-按字符读"><a href="#fgetc-按字符读" class="headerlink" title="fgetc() 按字符读"></a>fgetc() 按字符读</h1></li>
-</ul>
-<ul>
-<li>fread() 直接读</li>
-<li>fgets() 按行读</li>
-<li>fgetc() 按字符读<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>a2f194de9eeba9f56e804d762a6cdf15c9221dfd</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<p>另外，feof() 函数检查是否到达文件尾，用于遍历。</p>
-<p>例子：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$cities = fopen(<span class="string">"result1.txt"</span>, <span class="string">"r"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open"</span>);</span><br><span class="line"></span><br><span class="line">$location = <span class="keyword">array</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (!feof($cities)) &#123;</span><br><span class="line"></span><br><span class="line">  $location[] = fgets($cities);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">array_pop($location);</span><br><span class="line"></span><br><span class="line">fclose($cities);</span><br></pre></td></tr></table></figure>
-<p>这里有一个坑，按行读取的字符串存在数组中，每个字符串都包含一个换行符，需要去掉。用替换的方式将 ‘\n’ 换成 ‘’：</p>
-<p>  <code>$location=str_replace(&quot;\n&quot;,&quot;&quot;,$location);</code></p>
-<h3 id="使用curl"><a href="#使用curl" class="headerlink" title="使用curl"></a>使用curl</h3><p>curl（Client URL Library）简洁好用，在命令行里可以和服务器各种交互，怎样使用PHP调用curl呢？</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    <span class="comment">// create curl resource </span></span><br><span class="line">   $ch = curl_init(); </span><br><span class="line"></span><br><span class="line">   <span class="comment">// set url </span></span><br><span class="line">   curl_setopt($ch, CURLOPT_URL, <span class="string">"baidu.com"</span>); </span><br><span class="line"></span><br><span class="line">   <span class="comment">//return the transfer as a string </span></span><br><span class="line">   curl_setopt($ch, CURLOPT_RETURNTRANSFER, <span class="number">1</span>); </span><br><span class="line"></span><br><span class="line">   <span class="comment">// $output contains the output string </span></span><br><span class="line">   $output = curl_exec($ch); </span><br><span class="line"></span><br><span class="line">    <span class="comment">//echo output</span></span><br><span class="line">    <span class="keyword">echo</span> $output;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// close curl resource to free up system resources </span></span><br><span class="line">   curl_close($ch);      </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="引用其他文件"><a href="#引用其他文件" class="headerlink" title="引用其他文件"></a>引用其他文件</h3><p>很多情况下，需要调用其他PHP文件里的类和函数，有两种方式引用：require 和 include。唯一的区别是，引用出错时require会报error，include只会报warning。</p>
-<p><code>require_once &#39;file&#39;;</code></p>
-<p>文件可以是当前路径下的文件名，可以是绝对路径，可以是相对路径。相对路径的写法：</p>
-<p><code>include_once __FILE__.&#39;../../dir/file&#39;;</code></p>
-<h1 id="lt-lt-lt-lt-lt-lt-lt-HEAD"><a href="#lt-lt-lt-lt-lt-lt-lt-HEAD" class="headerlink" title="&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD"></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1><blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>a2f194de9eeba9f56e804d762a6cdf15c9221dfd</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1028,13 +1042,20 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
 
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>

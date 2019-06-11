@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-05T13:06:43.183Z</updated>
+  <updated>2019-06-11T06:39:53.334Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ffmpeg小记</title>
+    <link href="http://yoursite.com/ffmpeg%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://yoursite.com/ffmpeg小记/</id>
+    <published>2019-06-11T06:38:29.000Z</published>
+    <updated>2019-06-11T06:39:53.334Z</updated>
+    
+    <content type="html"><![CDATA[<p>Official Website：<a href="https://ffmpeg.org/" target="_blank" rel="noopener">https://ffmpeg.org/</a></p><h2 id="FFmpeg是啥"><a href="#FFmpeg是啥" class="headerlink" title="FFmpeg是啥"></a>FFmpeg是啥</h2><p>FFmpeg：a complete, cross-platform solution to record, convert and stream audio and video.</p><p>wiki：<a href="https://zh.wikipedia.org/wiki/FFmpeg" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/FFmpeg</a></p><p>一个可以运行音频和视频多种格式的录影、转换、流功能的自由软件</p><h2 id="FFmpeg转码"><a href="#FFmpeg转码" class="headerlink" title="FFmpeg转码"></a>FFmpeg转码</h2><p>可以使用CPU/GPU两种方式进行视频编码，分别称为软编码和硬编码</p><p>软编码和硬编码如何区分</p><p>​    软编码：使用CPU进行编码</p><p>​    硬编码：使用非CPU进行编码，如显卡GPU、专用的DSP、FPGA、ASIC芯片等</p><p>软编码和硬编码比较</p><p>​       软编码：实现直接、简单，参数调整方便，升级易，但CPU负载重，性能较硬编码低，低码率下质量通常比硬编码要好一点。</p><p>​       硬编码：性能高，低码率下通常质量低于软编码器，但部分产品在GPU硬件平台移植了优秀的软编码算法（如X264）的，质量基本等同于软编码。</p><p>本文介绍GPU硬编码对视频转码的加速</p><p>硬件加速（HWAccel）是什么？有哪些GPU支持硬件加速？FFmpeg怎么做HWAccel？看FFmpeg官方文档：<a href="https://trac.ffmpeg.org/wiki/HWAccelIntro" target="_blank" rel="noopener">https://trac.ffmpeg.org/wiki/HWAccelIntro</a></p><p>可见，目前使用较多的是NVIDIA的GPU，相关资料也比较丰富。看NVIDIA官方文档：<a href="https://developer.nvidia.com/FFmpeg" target="_blank" rel="noopener">https://developer.nvidia.com/FFmpeg</a></p><p>（视频编码、解码和转码是 FFmpeg 的主要应用。 由于 FFmpeg 和 libav 社区的支持和 NVIDIA 工程师的贡献，这两个工具现在都支持通过集成 NVIDIA 视频编解码器 SDK 的硬件加速视频编码和解码。</p><p>利用 FFmpeg 的音频编解码器、流切换和 RTP 协议，FFmpeg 与 NVIDIA 视频编解码器 SDK 的集成使得高性能硬件加速的视频管道成为可能。</p><h2 id="FFmpeg硬件加速"><a href="#FFmpeg硬件加速" class="headerlink" title="FFmpeg硬件加速"></a>FFmpeg硬件加速</h2><h3 id="1-下载FFmpeg及依赖库"><a href="#1-下载FFmpeg及依赖库" class="headerlink" title="1. 下载FFmpeg及依赖库"></a>1. 下载FFmpeg及依赖库</h3><p>安装依赖工具</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; yum install autoconf automake bzip2 cmake freetype-devel gcc gcc-c++ git libtool make mercurial pkgconfig zlib-devel</span><br></pre></td></tr></table></figure><p>ffmpeg官网下载 <a href="https://ffmpeg.org/download.html" target="_blank" rel="noopener">https://ffmpeg.org/download.html</a></p><h3 id="2-下载安装NVIDIA驱动"><a href="#2-下载安装NVIDIA驱动" class="headerlink" title="2.下载安装NVIDIA驱动"></a>2.下载安装NVIDIA驱动</h3><p>到 <a href="https://www.nvidia.com/Download/index.aspx?lang=en-us" target="_blank" rel="noopener">https://www.nvidia.com/Download/index.aspx?lang=en-us</a> 选择相应驱动下载</p><p>安装必要组件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; yum install gcc kernel-devel kernel-headers</span><br></pre></td></tr></table></figure><p>找到kernel source，执行安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ./NVIDIA-Linux-x86_64-418.67.run --kernel-source-path=/usr/src/kernels/3.10.0-862.el7.x86_64 -k $(uname -r)</span><br></pre></td></tr></table></figure><p>(中间可能会出错，参考<a href="https://askubuntu.com/questions/149206/how-to-install-nvidia-run" target="_blank" rel="noopener">https://askubuntu.com/questions/149206/how-to-install-nvidia-run</a> 加上 –no-x-check 参数可解决)</p><p>会先安装32位兼容库，然后安装驱动</p><p>检查安装是否成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; nvidia-smi</span><br></pre></td></tr></table></figure><h3 id="3-下载安装CUDA工具包"><a href="#3-下载安装CUDA工具包" class="headerlink" title="3.下载安装CUDA工具包"></a>3.下载安装CUDA工具包</h3><p>NVIDIA CUDA工具包为创建高性能GPU应用程序提供了开发环境 <a href="https://developer.nvidia.com/cuda-toolkit" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-toolkit</a></p><p>官网下载CUDA：<a href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=CentOS&amp;target_version=7&amp;target_type=runfilelocal" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=CentOS&amp;target_version=7&amp;target_type=runfilelocal</a></p><p>执行安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ./cuda_10.1.105_418.39_linux.run</span><br></pre></td></tr></table></figure><p>出错，查看安装日志 /var/log/cuda-installer.log。 You appear to be running an X server</p><p>执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; service lightdm stop</span><br><span class="line"></span><br><span class="line">&gt; init 3</span><br><span class="line"></span><br><span class="line">&gt; ps ax | grep X</span><br><span class="line"></span><br><span class="line">&gt; kill -9 &#123;X pid&#125;</span><br></pre></td></tr></table></figure><p>再次安装，成功。除了CUDA toolkits，还装上了samples，可供验证</p><p>配置环境变量  /etc/profile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/cuda-10.1/bin:$PATH</span><br><span class="line">export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; source /etc/profile</span><br></pre></td></tr></table></figure><p>到samples目录，使用CUDA，例如对于deviceQuery例子，运行得到：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.1, CUDA Runtime Version = 10.1, NumDevs = 1</span><br><span class="line">Result = PASS</span><br></pre></td></tr></table></figure><h3 id="4-编译FFmpeg"><a href="#4-编译FFmpeg" class="headerlink" title="4.编译FFmpeg"></a>4.编译FFmpeg</h3><p> 先安装 NVIDIA headers</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; git clone https://[git.videolan.org/git](http://git.videolan.org/git)/ffmpeg/nv-codec-headers.git</span><br><span class="line"></span><br><span class="line">&gt; cd nv-codec-headers</span><br><span class="line"></span><br><span class="line">&gt; make</span><br><span class="line"></span><br><span class="line">&gt; sudo make install</span><br></pre></td></tr></table></figure><p>接着编译FFmpeg</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure   --prefix=&quot;$HOME/ffmpeg_build&quot;   --pkg-config-flags=&quot;--static&quot;   --extra-cflags=&quot;-I$HOME/ffmpeg_build/include -I/usr/local/cuda/include&quot;   --extra-ldflags=&quot;-L$HOME/ffmpeg_build/lib -L/usr/local/cuda/lib64&quot;   --extra-libs=-lpthread   --extra-libs=-lm   --bindir=&quot;$HOME/bin&quot;   --enable-gpl   --enable-libfdk_aac    --enable-libmp3lame --enable-nonfree   --enable-cuda   --enable-cuvid   --enable-nvenc --enable-libnpp --enable-libx264</span><br></pre></td></tr></table></figure><p>其中，libfdk_cc是ACC音频编码器，libmp3lame是MP3音频编码器，libx264是H.264视频编码器，这三项对x264编码视频是必须的。</p><p>cuda, cuvid, nvenc 是GPU加速相关的，必备。</p><p>gpl， libnpp未知，但也需要编译进去，否则转码带分辨率参数时会报错。</p><p>另外，nasm 和  yasm 两个汇编编译器需要提前安装，编译某些依赖库时会需要用到。</p><h3 id="5-FFmpeg相关使用"><a href="#5-FFmpeg相关使用" class="headerlink" title="5.FFmpeg相关使用"></a>5.FFmpeg相关使用</h3><p>help</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -h</span><br></pre></td></tr></table></figure><p>通过ffprobe命令识别并输出视频信息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffprobe -v error -show_streams -print_format json &lt;input&gt;</span><br></pre></td></tr></table></figure><p>查看是否支持编码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -h encoder=libx264</span><br></pre></td></tr></table></figure><p>查看支持的硬件加速选项</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -hwaccels</span><br></pre></td></tr></table></figure><p>查看cuvid提供的GPU编解码器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ffmpeg -codecs | grep cuvid</span><br></pre></td></tr></table></figure><p>转码一个单一的视频文件：</p><p>不用GPU加速</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; time ffmpeg -i 001.mp4 -c:v libx264 -b:v 2048k -vf scale=1280:-1 -y 001_output.mp4</span><br></pre></td></tr></table></figure><p>使用GPU加速</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; time ffmpeg -hwaccel cuvid -c:v h264_cuvid -i 001.mp4 -b:v 2048k -vf scale=1280:-1 -y -c:v h264_nvenc 002_output.mp4</span><br></pre></td></tr></table></figure><ul><li>-c:v：指定编码器，编码器列表可以使用ffmpeg -codecs查看</li><li>-vf scale：指定输出视频的宽高，高-1代表按照比例自动适应</li><li>-b:v：指定输出视频的码率，即输出视频每秒的bit数</li><li>-hwaccel cuvid：指定使用cuvid硬件加速</li><li>-c:v h264_cuvid：使用h264_cuvid进行视频解码</li><li>-c:v h264_nvenc：使用h264_nvenc进行视频编码</li><li>-vf scale_npp=1280:-1：指定输出视频的宽高，注意，这里和软解码时使用的-vf scale=x:x不一样</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Official Website：&lt;a href=&quot;https://ffmpeg.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://ffmpeg.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;FFmpeg是啥&quot;&gt;&lt;a href=&quot;#FFm
+      
+    
+    </summary>
+    
+    
+      <category term="ffmpeg, gpu, nvidia" scheme="http://yoursite.com/tags/ffmpeg-gpu-nvidia/"/>
+    
+  </entry>
   
   <entry>
     <title>互联网常用数据指标</title>
@@ -208,30 +232,6 @@
       
         &lt;p&gt;Charles是一个web调试代理工具，可以高效查看web访问的HTTP流量，尤其适用于移动端访问数据的抓取。&lt;/p&gt;
 &lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;官网安装Cha
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>使用新的域名</title>
-    <link href="http://yoursite.com/modify-domain/"/>
-    <id>http://yoursite.com/modify-domain/</id>
-    <published>2018-05-13T15:11:14.000Z</published>
-    <updated>2019-04-05T13:06:43.199Z</updated>
-    
-    <content type="html"><![CDATA[<p>博客更换了新的域名 lizhongwei.me</p><p>将可以被搜索引擎检索到</p><p>不只作为一个自留地，未来输出更多有用文章</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;博客更换了新的域名 lizhongwei.me&lt;/p&gt;
-&lt;p&gt;将可以被搜索引擎检索到&lt;/p&gt;
-&lt;p&gt;不只作为一个自留地，未来输出更多有用文章&lt;/p&gt;
-
       
     
     </summary>

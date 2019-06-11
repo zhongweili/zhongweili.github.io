@@ -262,6 +262,143 @@
             
               
                 
+                <a class="post-title-link" href="/build-a-tree/" itemprop="url">
+                  种一棵树
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-11-01T19:14:56+08:00" content="2017-11-01">
+              2017-11-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>种一棵树，最好的时间是十年前，其次是现在。学编程亦如此。</p>
+<p>我决定新学一门编程语言，一方面从零学起可以补漏一些计算机基础知识，另一方面为以后的工作储备，多一点发展方向。</p>
+<p>为什么选择学习Go？左耳朵耗子的<a href="https://coolshell.cn/articles/18190.html" target="_blank" rel="noopener">这篇文章</a>讲得很精彩，他以一个前辈的视野论述了Go语言的优缺点和发展前景。</p>
+<blockquote>
+<p>一个技术能不能发展起来，关键看三点：</p>
+<ul>
+<li>有没有一个比较好的社区</li>
+<li>有没有一个工业化的标准</li>
+<li>有没有一个或多个杀手级应用</li>
+</ul>
+<p>用这些标尺来量一下Go语言，可以清楚看到：</p>
+<ul>
+<li>Go 语言容易上手</li>
+<li>Go 语言解决了并发编程和写底层应用开发效率的痛点</li>
+<li>Go 语言有Google这个世界一流的技术公司在后面</li>
+<li>Go 语言的杀手级应用是Docker，而Docker的生态圈在这几年完全爆棚了</li>
+</ul>
+</blockquote>
+<p>好了，话不多说，本文记录一下Go环境配置。</p>
+<h4 id="Go安装"><a href="#Go安装" class="headerlink" title="Go安装"></a>Go安装</h4><h5 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h5><p>win10系统直接官网下载安装，环境变量都自动配置好了</p>
+<h5 id="Linux（CentOS）"><a href="#Linux（CentOS）" class="headerlink" title="Linux（CentOS）"></a>Linux（CentOS）</h5><p>下载</p>
+<p><code>wget https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz</code></p>
+<p>解压</p>
+<p><code>tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz</code></p>
+<p>设置环境变量，~/.bashrc、~/.zshrc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export GOROOT=$HOME/go</span><br><span class="line">export GOPATH=$HOME/work</span><br><span class="line">export PATH=$PATH:GOROOT/bin:$GOPATH/bin</span><br><span class="line">export GOBIN=$HOME/work/bin</span><br></pre></td></tr></table></figure>
+<h4 id="Go命令"><a href="#Go命令" class="headerlink" title="Go命令"></a>Go命令</h4><p><code>go build</code></p>
+<p>编译</p>
+<p><code>go clean</code></p>
+<p>清除编译文件</p>
+<p><code>go get</code></p>
+<p>获取远程包（其实是两步，下载，go install）</p>
+<p><code>go install</code></p>
+<p>加载（生成可执行结果，并自动放到$GOBIN下）</p>
+<p><code>go test</code></p>
+<p>读取*_test.go文件，生成并运行测试用可执行文件</p>
+<p><code>go run</code></p>
+<p>编译并运行Go程序</p>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><p><code>mkdir $GOPATH/hello</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  fmt.Printf(<span class="string">"Hello, world.\n"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>go install hello</code></p>
+<p><code>hello</code></p>
+<p>输出”Hello，world.”</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/thinking-in-projects/" itemprop="url">
                   项目开发中的反常识思考
                 </a>
@@ -998,107 +1135,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/HTTP-in-Development/" itemprop="url">
-                  HTTP in Development
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-06-05T23:14:34+08:00" content="2017-06-05">
-              2017-06-05
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>讨论班上分享了HTTP的一些东西</p>
-<p><a href="https://www.slideshare.net/ssuser93d63d/http-in-development" target="_blank" rel="noopener">https://www.slideshare.net/ssuser93d63d/http-in-development</a></p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1137,13 +1178,20 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
 
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
